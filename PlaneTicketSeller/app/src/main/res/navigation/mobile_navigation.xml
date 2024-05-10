@@ -3,23 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_tickets">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_tickets"
         android:name="dev.farad2020.planeticketseller.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:label="@string/title_tickets"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_hotels"
         android:name="dev.farad2020.planeticketseller.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_hotels"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_shorter"
         android:name="dev.farad2020.planeticketseller.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_shorter"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_subscriptions"
+        android:name="dev.farad2020.planeticketseller.ui.notifications.NotificationsFragment"
+        android:label="@string/title_subscriptions"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="dev.farad2020.planeticketseller.ui.notifications.NotificationsFragment"
+        android:label="@string/title_profile"
         tools:layout="@layout/fragment_notifications" />
 </navigation>
