@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+<!--    <item name="android:fontFamily">@font/your_font_name</item>-->
+<!--    <item name="android:textStyle">bold</item>-->
+
+<!--   TODO add font-family: SF Pro Display; -->
+
+    <style name="BaseTextViewStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/text_main</item>
+        <item name="fontWeight">600</item>
+        <item name="lineHeight">26.4sp</item>
+    </style>
+
+
+    <style name="Title1">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="fontWeight">600</item>
+        <item name="lineHeight">26.4sp</item>
+    </style>
+
+
+    <style name="ButtonText1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="fontWeight">600</item>
+        <item name="lineHeight">20.8sp</item>
+    </style>
+
+
+    <style name="ButtonText1_gray">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="fontWeight">600</item>
+        <item name="lineHeight">20.8sp</item>
+    </style>
+</resources>

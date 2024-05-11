@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:background="@drawable/bg_rounded_secondary">
+
+<ImageView
+    android:id="@+id/ic_back"
+    android:layout_width="24dp"
+    android:layout_height="24dp"
+    android:src="@drawable/ic_back"
+    android:layout_marginStart="8dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+<!--        TODO: ask why top and bottom spaces are 18 and 17dp,
+                where elsewhere they are better.
+                and ic close is strange. for now left to refactor-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/ic_back"
+    android:orientation="vertical"
+    android:paddingTop="18dp"
+    android:paddingBottom="16dp"
+    android:paddingEnd="16dp"
+    android:paddingStart="8dp">
+
+        <TextView
+            android:id="@+id/search_text_first"
+            style="@style/ButtonText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/searchbar_minsk"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/ic_swap"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_swap"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/search_text_first"
+            app:layout_constraintBottom_toBottomOf="@id/search_text_first"/>
+
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="8dp"
+            android:background="@color/divider_tickets_page"
+            app:layout_constraintTop_toBottomOf="@id/search_text_first"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/search_text_second"
+            style="@style/ButtonText1_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/searchbar_where_to"
+            app:layout_constraintStart_toStartOf="@+id/divider"
+            app:layout_constraintTop_toBottomOf="@id/divider"/>
+
+        <ImageView
+            android:id="@+id/ic_close"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/search_text_second"
+            app:layout_constraintBottom_toBottomOf="@id/search_text_second"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

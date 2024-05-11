@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.tickets.TicketsFragment"
+    android:background="@color/bg_main">
+
+    <TextView
+        android:id="@+id/text_title"
+        style="@style/BaseTextViewStyle"
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:textAlignment="center"
+        android:text="@string/tickets_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+<!--    TODO: ask In design this view have seemingly 1dp error variance.
+            like here, horizontal margin should be 15dp and 16dp, instead of just 16?-->
+    <include
+        android:id="@+id/searchbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="36dp"
+        android:layout_marginHorizontal="16dp"
+        layout="@layout/searchbar_tickets_page"
+        app:layout_constraintTop_toBottomOf="@+id/text_title" />
+
+<!--    TODO: ask if marginStart 15dp is intended in design-->
+    <TextView
+        android:id="@+id/text_section_title"
+        style="@style/Title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="35dp"
+        android:text="@string/title_section_music"
+        app:layout_constraintTop_toBottomOf="@+id/searchbar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

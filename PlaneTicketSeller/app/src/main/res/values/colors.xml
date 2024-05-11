@@ -7,4 +7,29 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <!--    For some reason, in design,
+    colors for searchbar in tickets page, and others aren't consistent!
+    this might result in some strange namings
+    -->
+
+
+    <!--    Basic colors-->
+    <color name="bg_main">#0C0C0C</color>
+    <color name="bg_secondary">#242529</color>
+    <color name="bg_tertiary">#3E3F43</color>
+
+    <color name="accent">#FFFFFF</color>
+
+<!--    Text Colors-->
+    <color name="text_main">#D9D9D9</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_gray">#9F9F9F</color>
+
+<!--    Divider Colors-->
+    <color name="divider_tickets_page">#5E5F61</color>
+    <color name="divider">#3E3F43</color>
+
+
 </resources>
