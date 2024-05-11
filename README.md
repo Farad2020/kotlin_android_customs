@@ -2,8 +2,8 @@
 
 This repository serves as a playground for exploring and experimenting with various Kotlin-based Android development concepts. It houses several minor projects, each focusing on specific functionalities or technologies.
 
-* [PlaneTicketSeller: Basic Android App]([link/to/planeticketseller](https://github.com/Farad2020/kotlin_android_customs/new/main?filename=README.md#planeticketseller))
-* [How to Use This Repository](https://github.com/Farad2020/kotlin_android_customs/new/main?filename=README.md#how-to-use-this-repository)
+* [PlaneTicketSeller: Basic Android App](https://github.com/Farad2020/kotlin_android_customs/tree/main#planeticketseller)
+* [How to Use This Repository](https://github.com/Farad2020/kotlin_android_customs/tree/main#how-to-use-this-repository)
 * [Getting Help](https://github.com/Farad2020/kotlin_android_customs/new/main?filename=README.md#getting-help)
 
 
