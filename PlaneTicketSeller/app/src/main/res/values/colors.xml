@@ -31,5 +31,10 @@
     <color name="divider_tickets_page">#5E5F61</color>
     <color name="divider">#3E3F43</color>
 
+<!--    Nav Menu Colors-->
+    <color name="menu_item_active">#2261BC</color>
+    <color name="menu_item_inactive">#9F9F9F</color>
+
+
 
 </resources>

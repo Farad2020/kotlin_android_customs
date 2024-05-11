@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/navigation_tickets"
-        android:name="dev.farad2020.planeticketseller.ui.home.HomeFragment"
+        android:name="dev.farad2020.planeticketseller.ui.tickets.TicketsFragment"
         android:label="@string/title_tickets"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_tickets" />
 
     <fragment
         android:id="@+id/navigation_hotels"
