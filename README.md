@@ -2,14 +2,14 @@
 
 This repository serves as a playground for exploring and experimenting with various Kotlin-based Android development concepts. It houses several minor projects, each focusing on specific functionalities or technologies.
 
-* **PlaneTicketSeller: Basic Android App**
+* **PlaneTicketSeller: Basic Android App** :small_airplane:
 * **How to Use This Repository**
 * **Getting Help**
 
 
 Accessible Projects:
 
-### [PlaneTicketSeller](https://github.com/Farad2020/kotlin_android_customs/tree/main/PlaneTicketSeller)
+### [PlaneTicketSeller](https://github.com/Farad2020/kotlin_android_customs/tree/main/PlaneTicketSeller) :small_airplane:
 Description: Basic Android application demonstrating modular architecture.
 Details: Explores concepts like modularity, allowing for potential future expansion.
 To learn more: Navigate to the PlaneTicketSeller directory.
