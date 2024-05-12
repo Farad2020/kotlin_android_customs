@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "PlaneTicketSeller"
 include(":app")
- 
+include(":domain")
+include(":data")
