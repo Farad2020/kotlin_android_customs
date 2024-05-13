@@ -3,7 +3,7 @@ package dev.farad2020.domain.models
 import com.google.gson.annotations.SerializedName
 
 data class OffersResponse (
-    @SerializedName("tickets_offers" ) var offers : List<Offers> = listOf()
+    @SerializedName("offers" ) var offers : List<Offers> = listOf()
 )
 
 data class Offers (

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import dev.farad2020.data.model.OfferItem
+import dev.farad2020.planeticketseller.R
 import dev.farad2020.planeticketseller.databinding.LiItemOfferBinding
 
 class OffersAdapter(private val data: List<OfferItem>)
@@ -31,16 +32,22 @@ class OffersAdapter(private val data: List<OfferItem>)
 //        holder.imageView.setImageResource(item.imageResource)
         holder.title.text = item.title
         holder.city.text = item.city
-        holder.price.text = formatNumber(item.price)
+        holder.price.text =  "от ${addSpacesFromEnd(item.price.toString())}₽"
     }
 
-    private fun formatNumber(number: Int): String {
-        val formattedNumber = number.toString()
-        val regex = Regex("""\d{1,3}(?!\d)""")
-        return regex.replace(formattedNumber) { matchResult ->
-            matchResult.value.reversed().chunked(3).joinToString(separator = " ") { it.reversed() }
-        } + "₽"
+    fun addSpacesFromEnd(text: String): String {
+        val reversed = text.reversed()
+        val stringBuilder = StringBuilder()
+        for (i in reversed.indices) {
+            stringBuilder.append(reversed[i])
+            if (i > 2 && (i + 1) % 4 == 0) {
+                stringBuilder.append(' ')
+            }
+        }
+        return stringBuilder.reversed().toString()
     }
+    
+    
 
     override fun getItemCount() = data.size
 }

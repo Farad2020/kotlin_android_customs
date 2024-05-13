@@ -17,7 +17,7 @@ class TicketsViewModel : ViewModel() {
     private val _offers = MutableLiveData<List<OfferItem>>()
     val offers: LiveData<List<OfferItem>> = _offers
 
-    private fun getMockOffers() = MockApi.getTicketOffersResponseText()
+    private fun getMockOffers() = MockApi.getOffersResponseText()
 
     fun loadOffers(){
         viewModelScope.launch {
@@ -28,7 +28,7 @@ class TicketsViewModel : ViewModel() {
                 OfferItem(
                     "imageView",
                     offerData.title ?: "",
-                    offerData.town ?: "",
+                    offerData.town ?: "Town",
                     offerData.price?.value ?: 0,
                 )
             }
