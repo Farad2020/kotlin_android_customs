@@ -45,9 +45,11 @@
             app:layout_constraintTop_toBottomOf="@+id/layout_actions">
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcPlaces"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:itemCount="3"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/li_item_city"/>
 
 

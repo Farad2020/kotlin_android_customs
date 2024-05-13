@@ -17,7 +17,7 @@ open class BaseBtmSheetFragment<B : ViewBinding> (
     private var _binding: B? = null
     protected val binding get() = _binding!!
 
-    final override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = inflate.invoke(inflater, container, false)
 
         return binding.root

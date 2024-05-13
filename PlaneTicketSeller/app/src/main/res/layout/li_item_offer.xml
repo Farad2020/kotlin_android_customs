@@ -45,6 +45,8 @@
             android:layout_height="24dp"
             android:layout_marginTop="4dp"
             android:src="@drawable/ic_flight"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintTop_toBottomOf="@+id/tvCity"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
