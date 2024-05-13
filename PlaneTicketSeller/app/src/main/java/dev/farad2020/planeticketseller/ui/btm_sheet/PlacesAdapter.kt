@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import dev.farad2020.data.model.PopularPlaceItem
 import dev.farad2020.planeticketseller.databinding.LiItemCityBinding
 
-class PlacesAdapter(private val data: List<PopularPlaceItem>)
+class PlacesAdapter(
+    private val data: List<PopularPlaceItem>,
+    private val choosePlace: (String) -> Unit,
+    )
     : RecyclerView.Adapter<PlacesAdapter.ItemViewHolder>() {
 
 
@@ -16,6 +19,7 @@ class PlacesAdapter(private val data: List<PopularPlaceItem>)
         val imageView = binding.ivMain
         val title = binding.tvTitle
         val subtitle = binding.tvSubtitle
+        val root = binding.root
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -32,6 +36,10 @@ class PlacesAdapter(private val data: List<PopularPlaceItem>)
 //        holder.imageView.setImageResource(item.imageResource)
         holder.title.text = item.title
         holder.subtitle.text =  "Популярное направление"
+
+        holder.root.setOnClickListener {
+            choosePlace(item.title)
+        }
     }
 
 

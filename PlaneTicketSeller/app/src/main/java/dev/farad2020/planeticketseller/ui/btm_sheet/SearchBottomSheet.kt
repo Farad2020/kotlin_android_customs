@@ -33,14 +33,50 @@ class SearchBottomSheet:
 
         setupObservers()
 
+        setupView()
+
         return binding.root
     }
 
     private fun setupObservers(){
         ticketPageViewModel.popularPlaces.observe(viewLifecycleOwner){ offers ->
-            val adapter = PlacesAdapter(offers)  // Replace with your data list
+            val adapter = PlacesAdapter(offers, this::onPlaceClicked)  // Replace with your data list
             binding.rcPlaces.adapter = adapter
         }
+    }
+
+    private fun onPlaceClicked(text: String) {
+        binding.searchLayout.searchTextSecond.text = text
+    }
+
+    private fun setupView(){
+        binding.searchLayout.searchTextSecond.text = getString(R.string.searchbar_where_to)
+
+        binding.searchLayout.icClear.setOnClickListener {
+            binding.searchLayout.searchTextSecond.text = getString(R.string.searchbar_where_to)
+        }
+
+        setupLayoutActions()
+    }
+
+    private fun setupLayoutActions(){
+        binding.layoutActions.btnAnywhere.setOnClickListener {
+            binding.searchLayout.searchTextSecond.text = getString(R.string.label_anywhere)
+        }
+
+        binding.layoutActions.btnPath.setOnClickListener {
+            openTempPage()
+        }
+        binding.layoutActions.btnWeekends.setOnClickListener {
+            openTempPage()
+        }
+        binding.layoutActions.btnHotTickets.setOnClickListener {
+            openTempPage()
+        }
+    }
+
+    private fun openTempPage(){
+        TODO("Open Temp Page")
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

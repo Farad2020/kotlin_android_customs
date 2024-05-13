@@ -14,7 +14,7 @@
         android:id="@+id/btnPath"
         android:layout_weight="1"
         android:layout_width="70dp"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         
         <ImageView
             android:id="@+id/ivPath"
@@ -43,7 +43,7 @@
         android:id="@+id/btnAnywhere"
         android:layout_weight="1"
         android:layout_width="70dp"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/ivAnywhere"
@@ -62,7 +62,7 @@
             android:layout_marginTop="8dp"
             app:layout_constraintVertical_bias="0"
             android:textAlignment="center"
-            android:text="Куда угодно"
+            android:text="@string/label_anywhere"
             app:layout_constraintTop_toBottomOf="@id/ivAnywhere"
             app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -72,7 +72,7 @@
         android:id="@+id/btnWeekends"
         android:layout_weight="1"
         android:layout_width="70dp"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/ivWeekends"
@@ -101,7 +101,7 @@
         android:id="@+id/btnHotTickets"
         android:layout_weight="1"
         android:layout_width="70dp"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/ivHotTickets"
