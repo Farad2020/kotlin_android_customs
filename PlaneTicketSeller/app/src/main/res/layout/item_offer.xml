@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg_rounded_secondary">
+
+        <ImageView
+            android:id="@+id/ivMain"
+            android:layout_width="132dp"
+            android:layout_height="133dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/Title3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="ItemName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivMain"/>
+
+        <TextView
+            android:id="@+id/tvCity"
+            style="@style/Text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="CityName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"/>
+
+        <ImageView
+            android:id="@+id/ivPlane"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_flight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCity"/>
+
+        <TextView
+            android:id="@+id/tvPrice"
+            style="@style/Text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="от 22 462 ₽"
+            app:layout_constraintStart_toEndOf="@+id/ivPlane"
+            app:layout_constraintTop_toTopOf="@+id/ivPlane"
+            app:layout_constraintBottom_toBottomOf="@id/ivPlane"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
