@@ -1,6 +1,7 @@
 package dev.farad2020.planeticketseller
 
 import android.os.Bundle
+import android.view.WindowManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController

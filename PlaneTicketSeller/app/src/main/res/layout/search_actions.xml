@@ -33,7 +33,7 @@
             android:layout_marginTop="8dp"
             app:layout_constraintVertical_bias="0"
             android:textAlignment="center"
-            tools:text="Сложный маршрут"
+            android:text="Сложный маршрут"
             app:layout_constraintTop_toBottomOf="@id/ivPath"
             app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -62,7 +62,7 @@
             android:layout_marginTop="8dp"
             app:layout_constraintVertical_bias="0"
             android:textAlignment="center"
-            tools:text="Куда угодно"
+            android:text="Куда угодно"
             app:layout_constraintTop_toBottomOf="@id/ivAnywhere"
             app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -91,7 +91,7 @@
             android:layout_marginTop="8dp"
             app:layout_constraintVertical_bias="0"
             android:textAlignment="center"
-            tools:text="Выходные"
+            android:text="Выходные"
             app:layout_constraintTop_toBottomOf="@id/ivWeekends"
             app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -120,7 +120,7 @@
             android:layout_marginTop="8dp"
             app:layout_constraintVertical_bias="0"
             android:textAlignment="center"
-            tools:text="Горячие билеты"
+            android:text="Горячие билеты"
             app:layout_constraintTop_toBottomOf="@id/ivHotTickets"
             app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

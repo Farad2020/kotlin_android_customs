@@ -9,37 +9,40 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import dev.farad2020.planeticketseller.databinding.FragmentHomeBinding
 import dev.farad2020.planeticketseller.databinding.FragmentTicketsBinding
+import dev.farad2020.planeticketseller.ui.base.BindingFragment
+import dev.farad2020.planeticketseller.ui.btm_sheet.SearchBottomSheet
 
 
 //TODO check if I can refactor Vectors
-class TicketsFragment : Fragment() {
+class TicketsFragment : BindingFragment<FragmentTicketsBinding>(
+    FragmentTicketsBinding::inflate
+) {
 
-    private var _binding: FragmentTicketsBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private val searchBtmSheet = SearchBottomSheet()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(TicketsViewModel::class.java)
+        super.onCreateView(inflater, container, savedInstanceState)
 
-        _binding = FragmentTicketsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        setupView()
 
-//        val textView: TextView = binding.textTitle
-//        homeViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
-        return root
+        return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun setupView(){
+        binding.searchbar.root.setOnClickListener {
+            showBottomSheet()
+        }
+    }
+
+
+    private fun showBottomSheet(){
+        if (searchBtmSheet.isAdded)
+            return
+
+        searchBtmSheet.show(childFragmentManager, SearchBottomSheet::class.simpleName)
     }
 }
