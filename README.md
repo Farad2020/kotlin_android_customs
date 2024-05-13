@@ -22,3 +22,12 @@ Run the projects using Android Studio or your preferred IDE.
 For specific project-related questions, refer to the documentation within each project directory (if available).
 For general Android development queries, explore online resources or consider seeking help from the Android developer community.
 I hope this README provides a clear and informative overview of your Android custom projects folder. Feel free to customize and adapt it to your specific needs!
+
+### Other Projects/Applications I've worked on that are available on Google Play:
+1. [Darlean KZ](https://play.google.com/store/apps/details?id=io.dar.qit.kz&hl=en_US) - Chat Module creation & implementation
+2. [Enjooyit Client App](https://play.google.com/store/apps/details?id=dev.rnm.enjoyyit_public&hl=ru&gl=US&pli=1) - creation & development support
+3. [Enjoyyit Partner App](https://play.google.com/store/apps/details?id=dev.rnm.enjoyyit_partner&hl=en_US) - creation & development support
+4. [4you Client](https://play.google.com/store/apps/details?id=dev.rnm.a4you) - creation & development support
+5. [4you Partner](https://play.google.com/store/apps/details?id=dev.rnm.merchant_app&hl=ru&gl=US) - creation & development support
+7. [Kino.kz](https://play.google.com/store/apps/details?id=kz.beemobile.kino&hl=ru&gl=US) - development support
+8. [Halyk Kazakhstan](https://play.google.com/store/apps/details?id=kz.kkb.homebank&hl=en_US) - Applinks implementation
