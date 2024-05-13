@@ -8,9 +8,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import dev.farad2020.planeticketseller.databinding.FragmentHomeBinding
 import dev.farad2020.planeticketseller.databinding.FragmentTicketsBinding
 import dev.farad2020.planeticketseller.ui.base.BindingFragment
+import dev.farad2020.planeticketseller.ui.base.ItemSpacingDecoration
 import dev.farad2020.planeticketseller.ui.btm_sheet.SearchBottomSheet
 import dev.farad2020.planeticketseller.ui.home.HomeViewModel
 
@@ -55,14 +57,12 @@ class TicketsFragment : BindingFragment<FragmentTicketsBinding>(
             showBottomSheet()
         }
 
-//        binding.rcOffers.layoutManager = LinearLayoutManager(this)
 
-// Optional: Add item decoration for spacing (replace with actual implementation)
-//        val itemDecoration = RecyclerView.ItemDecoration { outRect, _, parent, _ ->
-//            outRect.left = 67
-//            outRect.right = 67
-//        }
-//        recyclerView.addItemDecoration(itemDecoration)
+        val spacingDecoration = ItemSpacingDecoration(
+            dpToPx(GENERAL_LI_SPACING),
+            dpToPx(LAST_LI_SPACING),
+            )
+        binding.rcOffers.addItemDecoration(spacingDecoration)
 
     }
 
@@ -72,5 +72,15 @@ class TicketsFragment : BindingFragment<FragmentTicketsBinding>(
             return
 
         searchBtmSheet.show(childFragmentManager, SearchBottomSheet::class.simpleName)
+    }
+
+    private fun dpToPx(dp: Int): Int {
+        val density = resources.displayMetrics.density
+        return Math.round(dp.toFloat() * density)
+    }
+
+    companion object{
+        private const val GENERAL_LI_SPACING = 67
+        private const val LAST_LI_SPACING = 16
     }
 }
