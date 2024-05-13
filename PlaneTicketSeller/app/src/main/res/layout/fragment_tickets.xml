@@ -57,6 +57,40 @@
         app:layout_constraintTop_toBottomOf="@+id/text_section_title"/>
 
 
+    <TextView
+        android:id="@+id/tvShowAll"
+        style="@style/ButtonText1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="18dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="10dp"
+        android:textAlignment="center"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:background="@drawable/bg_rounded_secondary"
+        tools:text="Показать все места"
+        app:layout_constraintTop_toBottomOf="@+id/rcOffers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+
+    <TextView
+        style="@style/Title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:text="Ваш первый раз"
+        app:layout_constraintTop_toBottomOf="@+id/tvShowAll"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 
 
 
