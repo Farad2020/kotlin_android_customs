@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg_btm_sheet"
+    android:padding="16dp">
+
+        <View
+            android:id="@+id/notch"
+            android:layout_width="38dp"
+            android:layout_height="5dp"
+            android:background="@drawable/btm_sheet_notch"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <include
+            android:id="@+id/search_layout"
+            layout="@layout/searchbar_btm_sheet"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/notch"/>
+
+        <include
+            android:id="@+id/layout_actions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            layout="@layout/search_actions"
+            app:layout_constraintTop_toBottomOf="@id/search_layout"/>
+
+
+        <FrameLayout
+            android:id="@+id/rcLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="16dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_rounded_secondary"
+            app:layout_constraintTop_toBottomOf="@+id/layout_actions">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/li_item_city"/>
+
+
+        </FrameLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

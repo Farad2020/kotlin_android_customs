@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg_secondary">
+
+<!--    Could use implementation of recView,
+        and create 4 types of views, but instead, to save time, just creating separate buttons -->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnPath"
+        android:layout_weight="1"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content">
+        
+        <ImageView
+            android:id="@+id/ivPath"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_home_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvCity"
+            style="@style/Text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintVertical_bias="0"
+            android:textAlignment="center"
+            tools:text="Сложный маршрут"
+            app:layout_constraintTop_toBottomOf="@id/ivPath"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnAnywhere"
+        android:layout_weight="1"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivAnywhere"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_home_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvAnywhere"
+            style="@style/Text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintVertical_bias="0"
+            android:textAlignment="center"
+            tools:text="Куда угодно"
+            app:layout_constraintTop_toBottomOf="@id/ivAnywhere"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnWeekends"
+        android:layout_weight="1"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivWeekends"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_home_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvWeekends"
+            style="@style/Text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintVertical_bias="0"
+            android:textAlignment="center"
+            tools:text="Выходные"
+            app:layout_constraintTop_toBottomOf="@id/ivWeekends"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnHotTickets"
+        android:layout_weight="1"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivHotTickets"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_home_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvHotTickets"
+            style="@style/Text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintVertical_bias="0"
+            android:textAlignment="center"
+            tools:text="Горячие билеты"
+            app:layout_constraintTop_toBottomOf="@id/ivHotTickets"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+        
+
+
+</LinearLayout>

@@ -49,9 +49,10 @@
         android:id="@+id/rcOffers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
         android:layout_marginStart="16dp"
         tools:itemCount="3"
-        tools:listitem="@layout/item_offer"
+        tools:listitem="@layout/li_item_offer"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/text_section_title"/>

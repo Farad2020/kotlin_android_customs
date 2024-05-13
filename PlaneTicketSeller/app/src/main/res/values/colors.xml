@@ -18,6 +18,7 @@
     <!--    Basic colors-->
     <color name="bg_main">#0C0C0C</color>
     <color name="bg_secondary">#242529</color>
+    <color name="bg_searchbar">#2F3035</color>
     <color name="bg_tertiary">#3E3F43</color>
 
     <color name="accent">#FFFFFF</color>
@@ -26,10 +27,12 @@
     <color name="text_main">#D9D9D9</color>
     <color name="text_white">#FFFFFF</color>
     <color name="text_gray">#9F9F9F</color>
+    <color name="text_gray_2">#5E5F61</color>
 
 <!--    Divider Colors-->
     <color name="divider_tickets_page">#5E5F61</color>
     <color name="divider">#3E3F43</color>
+    <color name="btm_sheet_notch_color">#5E5F61</color>
 
 <!--    Nav Menu Colors-->
     <color name="menu_item_active">#2261BC</color>
