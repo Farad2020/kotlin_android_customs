@@ -26,14 +26,14 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/tvCity"
+            android:id="@+id/tvPath"
             style="@style/Text2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:layout_constraintVertical_bias="0"
             android:textAlignment="center"
-            android:text="Сложный маршрут"
+            android:text="@string/path"
             app:layout_constraintTop_toBottomOf="@id/ivPath"
             app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -91,7 +91,7 @@
             android:layout_marginTop="8dp"
             app:layout_constraintVertical_bias="0"
             android:textAlignment="center"
-            android:text="Выходные"
+            android:text="@string/weekends"
             app:layout_constraintTop_toBottomOf="@id/ivWeekends"
             app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -120,7 +120,7 @@
             android:layout_marginTop="8dp"
             app:layout_constraintVertical_bias="0"
             android:textAlignment="center"
-            android:text="Горячие билеты"
+            android:text="@string/hot_tickets"
             app:layout_constraintTop_toBottomOf="@id/ivHotTickets"
             app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
