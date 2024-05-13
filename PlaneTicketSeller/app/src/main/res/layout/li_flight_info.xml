@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="8dp"
+    android:background="@color/bg_searchbar">
+
+        <ImageView
+            android:id="@+id/ivMain"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_home_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/Text4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnPrice"
+            app:layout_constraintStart_toEndOf="@id/ivMain"
+            app:layout_constraintTop_toTopOf="@+id/ivMain"
+            tools:text="Уральские авиалинииУральские авиалинииУральские авиалинииУральские авиалинии"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintHorizontal_bias="0"/>
+
+
+        <LinearLayout
+            android:id="@+id/btnPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/ivMain"
+            app:layout_constraintEnd_toEndOf="parent">
+                <TextView
+                    android:id="@+id/tvPrice"
+                    style="@style/Text4"
+                    android:textColor="@color/text_blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    tools:text="2 390 ₽ "
+                    app:layout_constraintStart_toEndOf="@id/ivMain"
+                    app:layout_constraintTop_toTopOf="@+id/ivMain"/>
+
+
+                <ImageView
+                    android:id="@+id/ivPrice"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_home_black_24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            style="@style/Text2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            tools:text="07:00  09:10   10:00  11:00  12:00  13:00  12:00 07:00  09:10   10:00  11:00  12:00  13:00  12:00"
+            android:textColor="@color/text_gray_2"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintEnd_toEndOf="@id/btnPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/divider_tickets_page"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubtitle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

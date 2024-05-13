@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.tickets.TicketsFragment"
+    android:background="@color/bg_main">
+
+    <include
+        android:id="@+id/searchbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="47dp"
+        android:layout_marginHorizontal="16dp"
+        layout="@layout/snippet_searchbar_secondary"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <include
+        android:id="@+id/chipGroup"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="13dp"
+        android:layout_marginHorizontal="16dp"
+        layout="@layout/snippet_destination_selected_actions"
+        app:layout_constraintTop_toBottomOf="@+id/searchbar"/>
+
+
+    <include
+        android:id="@+id/snippetFlights"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="16dp"
+        layout="@layout/snippet_straight_directions"
+        app:layout_constraintTop_toBottomOf="@+id/searchbar"/>
+
+
+<!--    TODO add cursive-->
+    <TextView
+        android:id="@+id/tvShowTickets"
+        style="@style/ButtonText1"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="18dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="10dp"
+        android:textAlignment="center"
+        android:visibility="visible"
+        android:background="@drawable/bg_rounded_blue_8"
+        android:text="@string/label_show_tickets"
+        app:layout_constraintTop_toBottomOf="@+id/snippetFlights"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginVertical="24dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/bg_rounded_secondary_8"
+        app:layout_constraintTop_toBottomOf="@+id/tvShowTickets">
+
+        <ImageView
+            android:id="@+id/ivMain"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_home_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"/>
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/Text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            tools:text="@string/subscribe"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintBottom_toBottomOf="@+id/toggleSubscribe"
+            app:layout_constraintEnd_toStartOf="@+id/toggleSubscribe"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/ivMain"
+            app:layout_constraintTop_toTopOf="@+id/toggleSubscribe" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/toggleSubscribe"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginEnd="15dp"
+            android:foregroundGravity="center"
+            android:visibility="visible"
+            android:checked="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

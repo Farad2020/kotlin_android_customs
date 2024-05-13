@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <LinearLayout
+        android:id="@+id/chipBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded_secondary"
+        android:paddingHorizontal="2dp"
+        android:paddingVertical="8dp">
+        
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_flight"/>
+
+
+        <TextView
+            style="@style/Text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/label_chip_back"
+            app:circularflow_radiusInDP="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/chipDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded_secondary"
+        android:layout_marginStart="8dp"
+        android:paddingHorizontal="10.5dp"
+        android:paddingVertical="8dp">
+
+        <TextView
+            style="@style/Text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/label_chip_date"
+            app:circularflow_radiusInDP="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/chipType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded_secondary"
+        android:layout_marginStart="8dp"
+        android:paddingHorizontal="2dp"
+        android:paddingVertical="8dp">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_flight"/>
+
+
+        <TextView
+            style="@style/Text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/label_chip_type"
+            app:circularflow_radiusInDP="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/chipFilters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded_secondary"
+        android:layout_marginStart="8dp"
+        android:paddingHorizontal="2dp"
+        android:paddingVertical="8dp">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_flight"/>
+
+
+        <TextView
+            style="@style/Text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/label_chip_filters"
+            app:circularflow_radiusInDP="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+</LinearLayout>

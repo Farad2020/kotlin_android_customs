@@ -29,5 +29,17 @@
     <string name="hot_tickets">Горячие билеты</string>
     <string name="path">Сложный маршрут</string>
 
+<!--    Chips -->
+    <string name="label_chip_back">обратно</string>
+    <string name="label_chip_date">24 фев, сб</string>
+    <string name="label_chip_type">1,эконом</string>
+    <string name="label_chip_filters">фильтры</string>
+
+<!--    Direction Selected-->
+    <string name="label_direct_flights">Прямые рельсы</string>
+    <string name="label_show_all">Показать все</string>
+    <string name="label_show_tickets">Посмотреть все билеты</string>
+    <string name="subscribe">Подписка на цену</string>
+
 
 </resources>

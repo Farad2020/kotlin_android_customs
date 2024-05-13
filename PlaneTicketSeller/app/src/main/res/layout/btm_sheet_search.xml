@@ -18,7 +18,7 @@
 
         <include
             android:id="@+id/search_layout"
-            layout="@layout/searchbar_btm_sheet"
+            layout="@layout/snippet_searchbar_btm_sheet"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:layout_marginTop="24dp"
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            layout="@layout/search_actions"
+            layout="@layout/snippet_search_actions"
             app:layout_constraintTop_toBottomOf="@id/search_layout"/>
 
 

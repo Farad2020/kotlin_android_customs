@@ -31,9 +31,15 @@
     </style>
 
 
-
-
     <style name="Text2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="fontWeight">400</item>
+        <item name="lineHeight">16.8sp</item>
+    </style>
+
+<!--    TODO add cursive-->
+    <style name="Text4">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/text_white</item>
         <item name="fontWeight">400</item>
