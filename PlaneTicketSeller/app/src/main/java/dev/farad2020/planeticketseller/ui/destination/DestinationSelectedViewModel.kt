@@ -27,9 +27,10 @@ class DestinationSelectedViewModel : ViewModel() {
             val mockData = getMockOffers()
             val response = gson.fromJson(mockData, OffersResponse::class.java)
 
+//            TODO when backend added, move casting to other layers
             _offers.value = response.offers.map { offerData ->
                 OfferItem(
-                    "imageView",
+                    offerData.id ?: 1,
                     offerData.title ?: "",
                     offerData.town ?: "Town",
                     offerData.price?.value ?: 0,

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import dev.farad2020.data.model.OfferItem
+import dev.farad2020.planeticketseller.R
 import dev.farad2020.planeticketseller.databinding.LiItemOfferBinding
 
 class OffersAdapter(private val data: List<OfferItem>)
@@ -28,7 +29,9 @@ class OffersAdapter(private val data: List<OfferItem>)
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = data[position]
-//        holder.imageView.setImageResource(item.imageResource)
+
+//        Might Trigger outOfBounds, should add check later or add to caster
+        holder.imageView.setImageResource(images[(item.id - 1) % 3])
         holder.title.text = item.title
         holder.city.text = item.city
         holder.price.text =  "от ${addSpacesFromEnd(item.price.toString())}₽"
@@ -49,5 +52,13 @@ class OffersAdapter(private val data: List<OfferItem>)
     
 
     override fun getItemCount() = data.size
+
+    companion object{
+        private val images
+                = listOf(
+            R.drawable.ex_pic_1,
+            R.drawable.ex_pic_2,
+            R.drawable.ex_pic_3)
+    }
 }
 
