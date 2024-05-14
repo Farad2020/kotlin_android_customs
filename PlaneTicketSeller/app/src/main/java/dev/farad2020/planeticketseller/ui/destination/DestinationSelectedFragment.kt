@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import dev.farad2020.planeticketseller.databinding.FragmentDestinationSelectedBinding
 import dev.farad2020.planeticketseller.databinding.FragmentTicketListBinding
 import dev.farad2020.planeticketseller.databinding.FragmentTicketsMainBinding
 import dev.farad2020.planeticketseller.ui.base.BindingFragment
@@ -12,9 +14,8 @@ import dev.farad2020.planeticketseller.ui.base.ItemSpacingDecoration
 import dev.farad2020.planeticketseller.ui.btm_sheet.SearchBottomSheet
 
 
-//TODO check if I can refactor Vectors
-class DestinationSelectedFragment : BindingFragment<FragmentTicketListBinding>(
-    FragmentTicketListBinding::inflate
+class DestinationSelectedFragment : BindingFragment<FragmentDestinationSelectedBinding>(
+    FragmentDestinationSelectedBinding::inflate
 ) {
 
     private val ticketPageViewModel: DestinationSelectedViewModel by activityViewModels<DestinationSelectedViewModel>()
@@ -30,7 +31,7 @@ class DestinationSelectedFragment : BindingFragment<FragmentTicketListBinding>(
 
         setupView()
 
-        setupObservers()
+//        setupObservers()
 
         return binding.root
     }
@@ -42,7 +43,7 @@ class DestinationSelectedFragment : BindingFragment<FragmentTicketListBinding>(
     private fun setupObservers(){
         ticketPageViewModel.offers.observe(viewLifecycleOwner){ offers ->
             val adapter = FlightsAdapters(offers)  // Replace with your data list
-            binding.rcTickets.adapter = adapter
+            binding.snippetFlights.rcPlaces.adapter = adapter
         }
     }
 
@@ -50,6 +51,16 @@ class DestinationSelectedFragment : BindingFragment<FragmentTicketListBinding>(
 //        binding.searchbar.root.setOnClickListener {
 //            showBottomSheet()
 //        }
+
+        binding.searchbar.icBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
+        binding.tvShowTickets.setOnClickListener {
+            val action =
+                DestinationSelectedFragmentDirections.actionDestinationSelectedFragmentToTicketListFragment()
+            findNavController().navigate(action)
+        }
 
     }
 }

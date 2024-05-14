@@ -34,4 +34,18 @@
         android:name="dev.farad2020.planeticketseller.ui.notifications.NotificationsFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/destinationSelectedFragment"
+        android:name="dev.farad2020.planeticketseller.ui.destination.DestinationSelectedFragment"
+        android:label="fragment_destination_selected"
+        tools:layout="@layout/fragment_destination_selected" >
+        <action
+            android:id="@+id/action_destinationSelectedFragment_to_ticketListFragment"
+            app:destination="@id/ticketListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketListFragment"
+        android:name="dev.farad2020.planeticketseller.ui.ticketList.TicketListFragment"
+        android:label="fragment_ticket_list"
+        tools:layout="@layout/fragment_ticket_list" />
 </navigation>

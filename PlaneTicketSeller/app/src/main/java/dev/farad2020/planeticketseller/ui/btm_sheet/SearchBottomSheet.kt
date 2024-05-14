@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import dev.farad2020.planeticketseller.R
 import dev.farad2020.planeticketseller.databinding.BtmSheetSearchBinding
 import dev.farad2020.planeticketseller.ui.ticketMain.TicketsViewModel
@@ -62,7 +64,12 @@ class SearchBottomSheet:
         }
 
         binding.layoutActions.btnPath.setOnClickListener {
-            openTempPage()
+//            openTempPage()
+
+//            val bundle = bundleOf("key1" to "val1")
+//            findNavController().navigate(R.id.destinationSelectedFragment, bundle)
+
+            findNavController().navigate(R.id.destinationSelectedFragment)
         }
         binding.layoutActions.btnWeekends.setOnClickListener {
             openTempPage()

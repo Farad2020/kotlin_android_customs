@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -43,7 +46,6 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation("com.google.code.gson:gson:2.10.1")
-
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
