@@ -1,8 +1,6 @@
 package dev.farad2020.planeticketseller.ui.btm_sheet
 
 import android.app.Dialog
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,8 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import dev.farad2020.planeticketseller.R
 import dev.farad2020.planeticketseller.databinding.BtmSheetSearchBinding
-import dev.farad2020.planeticketseller.ui.tickets.OffersAdapter
-import dev.farad2020.planeticketseller.ui.tickets.TicketsViewModel
+import dev.farad2020.planeticketseller.ui.ticketMain.TicketsViewModel
 
 class SearchBottomSheet:
     BaseBtmSheetFragment<BtmSheetSearchBinding>(

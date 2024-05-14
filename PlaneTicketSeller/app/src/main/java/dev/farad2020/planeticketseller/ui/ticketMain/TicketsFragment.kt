@@ -1,4 +1,4 @@
-package dev.farad2020.planeticketseller.ui.tickets
+package dev.farad2020.planeticketseller.ui.ticketMain
 
 import android.os.Bundle
 import android.view.LayoutInflater

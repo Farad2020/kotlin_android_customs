@@ -1,14 +1,16 @@
-package dev.farad2020.planeticketseller.ui.tickets
+package dev.farad2020.planeticketseller.ui.ticketList
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import dev.farad2020.data.model.OfferItem
-import dev.farad2020.planeticketseller.R
 import dev.farad2020.planeticketseller.databinding.LiItemOfferBinding
 
-class OffersAdapter(private val data: List<OfferItem>)
-    : RecyclerView.Adapter<OffersAdapter.ItemViewHolder>() {
+
+//TODO add margin when badge visible
+
+class TicketsAdapters(private val data: List<OfferItem>)
+    : RecyclerView.Adapter<TicketsAdapters.ItemViewHolder>() {
 
     inner class ItemViewHolder(binding: LiItemOfferBinding)
         : RecyclerView.ViewHolder(binding.root) {

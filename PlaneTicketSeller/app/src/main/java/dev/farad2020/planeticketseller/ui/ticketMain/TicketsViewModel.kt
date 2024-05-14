@@ -1,4 +1,4 @@
-package dev.farad2020.planeticketseller.ui.tickets
+package dev.farad2020.planeticketseller.ui.ticketMain
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,7 +8,6 @@ import com.google.gson.Gson
 import dev.farad2020.data.model.OfferItem
 import dev.farad2020.data.model.PopularPlaceItem
 import dev.farad2020.domain.api.MockApi
-import dev.farad2020.domain.models.Offers
 import dev.farad2020.domain.models.OffersResponse
 import kotlinx.coroutines.launch
 
