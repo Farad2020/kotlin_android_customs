@@ -20,7 +20,9 @@
             android:id="@+id/ivPath"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/ic_home_black_24dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_rounded_green_8"
+            android:src="@drawable/ic_path"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -49,7 +51,9 @@
             android:id="@+id/ivAnywhere"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/ic_home_black_24dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_rounded_blue_8"
+            android:src="@drawable/ic_planet"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -78,7 +82,9 @@
             android:id="@+id/ivWeekends"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/ic_home_black_24dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_rounded_dark_blue_8"
+            android:src="@drawable/ic_calendar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -107,7 +113,9 @@
             android:id="@+id/ivHotTickets"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/ic_home_black_24dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_rounded_red_8"
+            android:src="@drawable/ic_fire"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>

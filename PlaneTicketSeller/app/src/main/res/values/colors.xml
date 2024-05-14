@@ -44,6 +44,7 @@
 <!--    Status colors-->
     <color name="status_red">#FF5E5E</color>
     <color name="status_blue">#2261BC</color>
+    <color name="status_dark_blue">#00427D</color>
 
 
 
