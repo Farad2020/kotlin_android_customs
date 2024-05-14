@@ -19,6 +19,7 @@
     <color name="bg_main">#0C0C0C</color>
     <color name="bg_secondary">#242529</color>
     <color name="bg_searchbar">#2F3035</color>
+    <color name="bg_ticket">#1D1E20</color>
     <color name="bg_green">#3A633B</color>
     <color name="bg_tertiary">#3E3F43</color>
 
@@ -39,6 +40,11 @@
 <!--    Nav Menu Colors-->
     <color name="menu_item_active">#2261BC</color>
     <color name="menu_item_inactive">#9F9F9F</color>
+
+<!--    Status colors-->
+    <color name="status_red">#FF5E5E</color>
+    <color name="status_blue">#2261BC</color>
+
 
 
 

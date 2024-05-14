@@ -41,7 +41,7 @@
             android:paddingHorizontal="16dp"
             android:paddingBottom="16dp"
             android:layout_marginTop="30dp"
-            android:background="@drawable/bg_rounded_secondary"
+            android:background="@drawable/bg_rounded_searchbar"
             app:layout_constraintTop_toBottomOf="@+id/layout_actions">
 
                 <androidx.recyclerview.widget.RecyclerView

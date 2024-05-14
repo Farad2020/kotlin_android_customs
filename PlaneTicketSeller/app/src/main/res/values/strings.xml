@@ -40,6 +40,8 @@
     <string name="label_show_all">Показать все</string>
     <string name="label_show_tickets">Посмотреть все билеты</string>
     <string name="subscribe">Подписка на цену</string>
+    <string name="label_filter">Фильтр</string>
+    <string name="label_price_graph">График цен</string>
 
 
 </resources>

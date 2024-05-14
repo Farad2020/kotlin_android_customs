@@ -8,7 +8,7 @@
         android:id="@+id/chipBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_rounded_secondary"
+        android:background="@drawable/bg_rounded_searchbar"
         android:paddingHorizontal="2dp"
         android:paddingVertical="8dp">
         
@@ -34,7 +34,7 @@
         android:id="@+id/chipDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_rounded_secondary"
+        android:background="@drawable/bg_rounded_searchbar"
         android:layout_marginStart="8dp"
         android:paddingHorizontal="10.5dp"
         android:paddingVertical="8dp">
@@ -55,7 +55,7 @@
         android:id="@+id/chipType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_rounded_secondary"
+        android:background="@drawable/bg_rounded_searchbar"
         android:layout_marginStart="8dp"
         android:paddingHorizontal="2dp"
         android:paddingVertical="8dp">
@@ -83,7 +83,7 @@
         android:id="@+id/chipFilters"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_rounded_secondary"
+        android:background="@drawable/bg_rounded_searchbar"
         android:layout_marginStart="8dp"
         android:paddingHorizontal="2dp"
         android:paddingVertical="8dp">

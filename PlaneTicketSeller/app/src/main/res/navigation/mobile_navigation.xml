@@ -9,7 +9,7 @@
         android:id="@+id/navigation_tickets"
         android:name="dev.farad2020.planeticketseller.ui.tickets.TicketsFragment"
         android:label="@string/title_tickets"
-        tools:layout="@layout/fragment_tickets" />
+        tools:layout="@layout/fragment_tickets_main" />
 
     <fragment
         android:id="@+id/navigation_hotels"
