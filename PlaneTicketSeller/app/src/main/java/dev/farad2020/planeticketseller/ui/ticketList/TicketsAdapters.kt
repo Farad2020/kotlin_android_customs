@@ -8,6 +8,7 @@ import dev.farad2020.data.model.TicketItem
 import dev.farad2020.planeticketseller.R
 import dev.farad2020.planeticketseller.databinding.LiItemOfferBinding
 import dev.farad2020.planeticketseller.databinding.LiTicketBinding
+import dev.farad2020.planeticketseller.ui.base.visible
 
 
 //TODO add margin when badge visible
@@ -20,10 +21,17 @@ class TicketsAdapters(
 
     inner class ItemViewHolder(binding: LiTicketBinding)
         : RecyclerView.ViewHolder(binding.root) {
-//        val ivState = binding.ivState
-//        val title = binding.tvTitle
-//        val time = binding.tvSubtitle
-//        val price = binding.tvPrice
+        val badge = binding.tvSpecial
+        val price = binding.tvPrice
+
+        val departureDate = binding.tvStartTime
+        val departureAirport = binding.tvStartCode
+        val arrivalDate = binding.tvEndTime
+        val arrivalAirport = binding.tvEndCode
+
+        val flightLength = binding.tvFlightTime
+        val flightInfo = binding.tvFlightInfo
+        val flightInfoDivider = binding.tvFlightInfoDivider
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -44,6 +52,11 @@ class TicketsAdapters(
 //        holder.city.text = item.city
 //
 //        holder.price.text =  "от ${addSpacesFromEnd(item.price.toString())}₽"
+    }
+
+    private fun showFlightInfo(isShow: Boolean, holder: ItemViewHolder){
+        holder.flightInfoDivider.visible(isShow)
+        holder.flightInfo.visible(isShow)
     }
     
     
