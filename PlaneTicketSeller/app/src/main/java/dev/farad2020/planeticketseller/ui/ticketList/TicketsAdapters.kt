@@ -8,6 +8,7 @@ import dev.farad2020.data.model.TicketItem
 import dev.farad2020.planeticketseller.R
 import dev.farad2020.planeticketseller.databinding.LiItemOfferBinding
 import dev.farad2020.planeticketseller.databinding.LiTicketBinding
+import dev.farad2020.planeticketseller.ui.base.gone
 import dev.farad2020.planeticketseller.ui.base.visible
 
 
@@ -54,7 +55,17 @@ class TicketsAdapters(
 //        holder.price.text =  "от ${addSpacesFromEnd(item.price.toString())}₽"
     }
 
-    private fun showFlightInfo(isShow: Boolean, holder: ItemViewHolder){
+    private fun handleBadge(holder: ItemViewHolder, text: String = "" ){
+        val isGone: Boolean = text.isEmpty()
+
+        if(!isGone){
+            holder.badge.text = text
+        }
+
+        holder.badge.gone(isGone)
+    }
+
+    private fun showFlightInfo(holder: ItemViewHolder, isShow: Boolean){
         holder.flightInfoDivider.visible(isShow)
         holder.flightInfo.visible(isShow)
     }
