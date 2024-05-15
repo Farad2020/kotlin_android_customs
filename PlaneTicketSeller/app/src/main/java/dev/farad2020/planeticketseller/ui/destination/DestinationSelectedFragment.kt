@@ -37,13 +37,13 @@ class DestinationSelectedFragment : BindingFragment<FragmentDestinationSelectedB
     }
 
     private fun setupViewModel(){
-        ticketPageViewModel.loadOffers()
+        ticketPageViewModel.loadTickets()
     }
 
     private fun setupObservers(){
-        ticketPageViewModel.offers.observe(viewLifecycleOwner){ offers ->
-            val adapter = FlightsAdapters(offers)  // Replace with your data list
-            binding.snippetFlights.rcPlaces.adapter = adapter
+        ticketPageViewModel.tickets.observe(viewLifecycleOwner){ offers ->
+//            val adapter = FlightsAdapters(offers)  // Replace with your data list
+//            binding.snippetFlights.rcPlaces.adapter = adapter
         }
     }
 
