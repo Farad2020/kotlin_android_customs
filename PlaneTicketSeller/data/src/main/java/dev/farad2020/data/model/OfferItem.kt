@@ -5,5 +5,6 @@ data class OfferItem(
     val id: Int,
     val title: String,
     val city: String,
-    val price: Int)
+    val price: Int,
+    )
 

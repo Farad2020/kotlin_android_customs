@@ -45,18 +45,6 @@ class TicketsAdapters(
 //
 //        holder.price.text =  "от ${addSpacesFromEnd(item.price.toString())}₽"
     }
-
-    fun addSpacesFromEnd(text: String): String {
-        val reversed = text.reversed()
-        val stringBuilder = StringBuilder()
-        for (i in reversed.indices) {
-            stringBuilder.append(reversed[i])
-            if (i > 2 && (i + 1) % 4 == 0) {
-                stringBuilder.append(' ')
-            }
-        }
-        return stringBuilder.reversed().toString()
-    }
     
     
 

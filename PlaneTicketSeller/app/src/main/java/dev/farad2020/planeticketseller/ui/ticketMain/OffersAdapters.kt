@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import dev.farad2020.data.model.OfferItem
 import dev.farad2020.planeticketseller.R
 import dev.farad2020.planeticketseller.databinding.LiItemOfferBinding
+import dev.farad2020.planeticketseller.ui.base.formatToPriceStr
+import kotlin.math.absoluteValue
 
 class OffersAdapter(private val data: List<OfferItem>)
     : RecyclerView.Adapter<OffersAdapter.ItemViewHolder>() {
@@ -34,19 +36,7 @@ class OffersAdapter(private val data: List<OfferItem>)
         holder.imageView.setImageResource(images[(item.id - 1) % 3])
         holder.title.text = item.title
         holder.city.text = item.city
-        holder.price.text =  "от ${addSpacesFromEnd(item.price.toString())}₽"
-    }
-
-    fun addSpacesFromEnd(text: String): String {
-        val reversed = text.reversed()
-        val stringBuilder = StringBuilder()
-        for (i in reversed.indices) {
-            stringBuilder.append(reversed[i])
-            if (i > 2 && (i + 1) % 4 == 0) {
-                stringBuilder.append(' ')
-            }
-        }
-        return stringBuilder.reversed().toString()
+        holder.price.text =  "от ${formatToPriceStr(item.price)}₽"
     }
     
     
