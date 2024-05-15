@@ -8,7 +8,7 @@
     android:background="@color/bg_searchbar">
 
         <ImageView
-            android:id="@+id/ivMain"
+            android:id="@+id/ivState"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_circle_red"
@@ -22,8 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             app:layout_constraintEnd_toStartOf="@+id/btnPrice"
-            app:layout_constraintStart_toEndOf="@id/ivMain"
-            app:layout_constraintTop_toTopOf="@+id/ivMain"
+            app:layout_constraintStart_toEndOf="@id/ivState"
+            app:layout_constraintTop_toTopOf="@+id/ivState"
             tools:text="Уральские авиалинииУральские авиалинииУральские авиалинииУральские авиалинии"
             android:maxLines="1"
             android:ellipsize="end"
@@ -34,7 +34,7 @@
             android:id="@+id/btnPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/ivMain"
+            app:layout_constraintTop_toTopOf="@id/ivState"
             app:layout_constraintEnd_toEndOf="parent">
                 <TextView
                     android:id="@+id/tvPrice"
@@ -43,9 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    tools:text="2 390 ₽ "
-                    app:layout_constraintStart_toEndOf="@id/ivMain"
-                    app:layout_constraintTop_toTopOf="@+id/ivMain"/>
+                    tools:text="2 390 ₽ "/>
 
 
                 <ImageView

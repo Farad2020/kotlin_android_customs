@@ -39,7 +39,7 @@ class SearchBottomSheet:
 
     private fun setupObservers(){
         ticketPageViewModel.popularPlaces.observe(viewLifecycleOwner){ offers ->
-            val adapter = PlacesAdapter(offers, this::onPlaceClicked)  // Replace with your data list
+            val adapter = PlacesAdapter(offers, this::onPlaceClicked)
             binding.rcPlaces.adapter = adapter
         }
     }

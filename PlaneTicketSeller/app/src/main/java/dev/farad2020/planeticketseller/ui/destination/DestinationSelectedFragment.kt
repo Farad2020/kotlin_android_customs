@@ -7,11 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import dev.farad2020.planeticketseller.databinding.FragmentDestinationSelectedBinding
-import dev.farad2020.planeticketseller.databinding.FragmentTicketListBinding
-import dev.farad2020.planeticketseller.databinding.FragmentTicketsMainBinding
 import dev.farad2020.planeticketseller.ui.base.BindingFragment
-import dev.farad2020.planeticketseller.ui.base.ItemSpacingDecoration
-import dev.farad2020.planeticketseller.ui.btm_sheet.SearchBottomSheet
+import dev.farad2020.planeticketseller.ui.base.gone
+import dev.farad2020.planeticketseller.ui.base.visible
 
 
 class DestinationSelectedFragment : BindingFragment<FragmentDestinationSelectedBinding>(
@@ -31,19 +29,25 @@ class DestinationSelectedFragment : BindingFragment<FragmentDestinationSelectedB
 
         setupView()
 
-//        setupObservers()
+        setupObservers()
 
         return binding.root
     }
 
     private fun setupViewModel(){
-        ticketPageViewModel.loadTickets()
+        ticketPageViewModel.loadTickets(TICKETS_TO_SHOW)
     }
 
     private fun setupObservers(){
-        ticketPageViewModel.tickets.observe(viewLifecycleOwner){ offers ->
-//            val adapter = FlightsAdapters(offers)  // Replace with your data list
-//            binding.snippetFlights.rcPlaces.adapter = adapter
+        ticketPageViewModel.ticketOffers.observe(viewLifecycleOwner){ ticketOffers ->
+            val adapter = TicketOffersAdapter(ticketOffers, TICKETS_TO_SHOW)
+            binding.snippetFlights.rcPlaces.adapter = adapter
+
+            if(ticketOffers.size > TICKETS_TO_SHOW){
+                binding.snippetFlights.tvShowAll.gone(true)
+            }else{
+                binding.snippetFlights.tvShowAll.visible(true)
+            }
         }
     }
 
@@ -62,5 +66,11 @@ class DestinationSelectedFragment : BindingFragment<FragmentDestinationSelectedB
             findNavController().navigate(action)
         }
 
+    }
+
+
+
+    companion object{
+        const val TICKETS_TO_SHOW = 3
     }
 }

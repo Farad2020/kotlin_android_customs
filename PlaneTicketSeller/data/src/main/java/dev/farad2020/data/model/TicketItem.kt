@@ -39,7 +39,3 @@ data class HandLuggageData (
     val hasHandLuggage: Boolean,
     val size: String? // Optional field can remain nullable
 )
-
-data class PriceData (
-    val value : Int
-)

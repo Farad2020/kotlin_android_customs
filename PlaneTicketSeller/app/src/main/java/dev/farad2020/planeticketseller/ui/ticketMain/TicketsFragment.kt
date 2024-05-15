@@ -41,7 +41,7 @@ class TicketsFragment : BindingFragment<FragmentTicketsMainBinding>(
 
     private fun setupObservers(){
         ticketPageViewModel.offers.observe(viewLifecycleOwner){ offers ->
-            val adapter = OffersAdapter(offers)  // Replace with your data list
+            val adapter = OffersAdapter(offers)
             binding.rcOffers.adapter = adapter
         }
     }

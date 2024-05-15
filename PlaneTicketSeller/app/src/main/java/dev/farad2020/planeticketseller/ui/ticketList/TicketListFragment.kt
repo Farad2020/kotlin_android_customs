@@ -36,14 +36,14 @@ class TicketListFragment : BindingFragment<FragmentTicketListBinding>(
     }
 
     private fun setupViewModel(){
-        ticketPageViewModel.loadOffers()
+//        ticketPageViewModel.loadOffers()
     }
 
     private fun setupObservers(){
-        ticketPageViewModel.offers.observe(viewLifecycleOwner){ offers ->
-            val adapter = TicketsAdapters(offers)  // Replace with your data list
-            binding.rcTickets.adapter = adapter
-        }
+//        ticketPageViewModel.offers.observe(viewLifecycleOwner){ offers ->
+//            val adapter = TicketsAdapters(offers)
+//            binding.rcTickets.adapter = adapter
+//        }
     }
 
     private fun setupView(){
