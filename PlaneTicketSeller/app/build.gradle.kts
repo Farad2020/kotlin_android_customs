@@ -45,7 +45,12 @@ dependencies {
 
     implementation(project(":data"))
     implementation(project(":domain"))
+
+    implementation("com.jakewharton.timber:timber:4.7.1")
     implementation("com.google.code.gson:gson:2.10.1")
+
+    // di
+    implementation("io.insert-koin:koin-android:3.1.2")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
