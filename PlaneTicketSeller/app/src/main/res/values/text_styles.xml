@@ -8,6 +8,7 @@
 <!--   TODO add font-family: SF Pro Display; -->
 
     <style name="BaseTextViewStyle">
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/text_main</item>
         <item name="fontWeight">600</item>
@@ -16,6 +17,7 @@
 
 
     <style name="Title1">
+        <item name="fontFamily">@font/sf_pro_display_semibold</item>
         <item name="android:textSize">22sp</item>
         <item name="android:textColor">@color/text_white</item>
         <item name="fontWeight">600</item>
@@ -24,6 +26,7 @@
 
 
     <style name="Title3">
+        <item name="fontFamily">@font/sf_pro_display_medium</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/text_white</item>
         <item name="fontWeight">600</item>
@@ -32,6 +35,7 @@
 
 
     <style name="Title4">
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/text_gray</item>
         <item name="fontWeight">600</item>
@@ -40,14 +44,24 @@
 
 
     <style name="Text2">
+        <item name="fontFamily">@font/sf_pro_display_semibold</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/text_white</item>
         <item name="fontWeight">400</item>
         <item name="lineHeight">16.8sp</item>
     </style>
 
-<!--    TODO add cursive-->
+
     <style name="Text4">
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="fontWeight">400</item>
+        <item name="lineHeight">16.8sp</item>
+    </style>
+
+    <style name="Text4Italic">
+        <item name="fontFamily">@font/sf_pro_display_regular_italic</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/text_white</item>
         <item name="fontWeight">400</item>
@@ -56,6 +70,7 @@
 
 
     <style name="ButtonText1">
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/text_white</item>
         <item name="fontWeight">600</item>
@@ -63,7 +78,13 @@
     </style>
 
 
+    <style name="ButtonText1Italic" parent="ButtonText1">
+        <item name="fontFamily">@font/sf_pro_display_regular_italic</item>
+    </style>
+
+
     <style name="ButtonText1_gray">
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/text_gray</item>
         <item name="fontWeight">600</item>

@@ -37,10 +37,9 @@
         app:layout_constraintTop_toBottomOf="@+id/chipGroup"/>
 
 
-<!--    TODO add cursive-->
     <TextView
         android:id="@+id/tvShowTickets"
-        style="@style/ButtonText1"
+        style="@style/ButtonText1Italic"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginHorizontal="16dp"
