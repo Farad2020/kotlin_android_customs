@@ -15,8 +15,4 @@ val dataModule = module {
     single<SharedPreferences> { androidContext().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE) }
 
     single<ConnectivityManager> { androidContext().getSystemService(Context.CONNECTIVITY_SERVICE)  as ConnectivityManager }
-
-    single<PlaneTicketRepository> {
-        PlaneTicketRepoImpl()
-    }
 }

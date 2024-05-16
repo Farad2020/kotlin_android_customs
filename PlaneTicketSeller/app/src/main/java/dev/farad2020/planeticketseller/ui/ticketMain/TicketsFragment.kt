@@ -9,6 +9,7 @@ import dev.farad2020.planeticketseller.databinding.FragmentTicketsMainBinding
 import dev.farad2020.planeticketseller.ui.base.BindingFragment
 import dev.farad2020.planeticketseller.ui.base.ItemSpacingDecoration
 import dev.farad2020.planeticketseller.ui.btm_sheet.SearchBottomSheet
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
 //TODO check if I can refactor Vectors
@@ -16,7 +17,7 @@ class TicketsFragment : BindingFragment<FragmentTicketsMainBinding>(
     FragmentTicketsMainBinding::inflate
 ) {
 
-    private val ticketPageViewModel: TicketsViewModel by activityViewModels<TicketsViewModel>()
+    private val ticketPageViewModel: TicketsViewModel by sharedViewModel<TicketsViewModel>()
     private val searchBtmSheet = SearchBottomSheet()
 
     override fun onCreateView(

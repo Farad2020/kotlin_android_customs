@@ -2,8 +2,10 @@ package dev.farad2020.planeticketseller
 
 import android.app.Application
 import dev.farad2020.data.di.networkModule
+import dev.farad2020.data.di.repositoryModule
 import dev.farad2020.planeticketseller.di.dataModule
-import org.koin.android.BuildConfig
+import dev.farad2020.planeticketseller.di.domainModule
+import dev.farad2020.planeticketseller.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
@@ -23,16 +25,17 @@ class PlaneTicketsApp: Application() {
             androidContext(this@PlaneTicketsApp)
             modules(
                 dataModule,
-                networkModule
+                domainModule,
+                viewModelModule,
+                networkModule,
+                repositoryModule,
             )
         }
 
     }
 
     private fun setupLogger(){
-        if (BuildConfig.DEBUG) {
-            Timber.plant(Timber.DebugTree())
-        }
+        Timber.plant(Timber.DebugTree())
     }
 
 

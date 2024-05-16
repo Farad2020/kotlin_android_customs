@@ -4,14 +4,29 @@ import dev.farad2020.data.model.ArrivalData
 import dev.farad2020.data.model.DepartureData
 import dev.farad2020.data.model.HandLuggageData
 import dev.farad2020.data.model.LuggageData
+import dev.farad2020.data.model.OfferItem
 import dev.farad2020.data.model.PriceData
 import dev.farad2020.data.model.TicketItem
 import dev.farad2020.data.model.TicketOfferItem
+import dev.farad2020.domain.models.OffersResponse
 import dev.farad2020.domain.models.Price
 import dev.farad2020.domain.models.TicketOffersResponse
 import dev.farad2020.domain.models.TicketsResponse
 
+//TODO refactor mapper
+
 object DataMapper{
+
+    fun mapToOffers(offersResponse: OffersResponse): List<OfferItem>{
+        return offersResponse.offers.map { offerData ->
+                OfferItem(
+                    offerData.id ?: 1,
+                    offerData.title ?: "",
+                    offerData.town ?: "Town",
+                    offerData.price?.value ?: 0,
+                )
+            }
+    }
 
 
 //    This is an example mapper, edit in the future, for more dynamic data
