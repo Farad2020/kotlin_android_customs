@@ -15,8 +15,7 @@ import dev.farad2020.planeticketseller.ui.base.visible
 //TODO add margin when badge visible
 
 class TicketsAdapters(
-    private val data: List<TicketItem>,
-    private val maxVisibleItems: Int
+    private val data: List<TicketItem>
 )
     : RecyclerView.Adapter<TicketsAdapters.ItemViewHolder>() {
 

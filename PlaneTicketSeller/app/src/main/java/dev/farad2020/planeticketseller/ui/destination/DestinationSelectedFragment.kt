@@ -15,6 +15,7 @@ import dev.farad2020.planeticketseller.ui.base.BindingFragment
 import dev.farad2020.planeticketseller.ui.base.getCurrentDateInRussianFormat
 import dev.farad2020.planeticketseller.ui.base.gone
 import dev.farad2020.planeticketseller.ui.base.visible
+import dev.farad2020.planeticketseller.ui.navModel.TicketListNavPayload
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
@@ -63,11 +64,22 @@ class DestinationSelectedFragment : BindingFragment<FragmentDestinationSelectedB
         setupActionButtons()
 
         binding.tvShowTickets.setOnClickListener {
-            val action =
-                DestinationSelectedFragmentDirections.actionDestinationSelectedFragmentToTicketListFragment()
-            findNavController().navigate(action)
+            openTickets()
         }
 
+    }
+
+    private fun openTickets(){
+        val pageData = TicketListNavPayload(
+            departureCity = binding.searchbar.searchTextFirst.text.toString(),
+            arrivalCity = binding.searchbar.searchTextSecond.text.toString(),
+            flightDate = binding.chipGroup.tvDate.text.toString(),
+            flightInfo = binding.chipGroup.tvFlightInfo.text.toString()
+        )
+
+        val action =
+            DestinationSelectedFragmentDirections.actionDestinationSelectedFragmentToTicketListFragment(pageData)
+        findNavController().navigate(action)
     }
 
     private fun setupSearchBar(){

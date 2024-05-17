@@ -48,7 +48,11 @@
         android:id="@+id/ticketListFragment"
         android:name="dev.farad2020.planeticketseller.ui.ticketList.TicketListFragment"
         android:label="fragment_ticket_list"
-        tools:layout="@layout/fragment_ticket_list" />
+        tools:layout="@layout/fragment_ticket_list" >
+        <argument
+            android:name="pageData"
+            app:argType="dev.farad2020.planeticketseller.ui.navModel.TicketListNavPayload" />
+    </fragment>
     <fragment
         android:id="@+id/tempFragment"
         android:name="dev.farad2020.planeticketseller.ui.tempFragment.TempFragment"

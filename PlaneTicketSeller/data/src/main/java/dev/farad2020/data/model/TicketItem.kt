@@ -3,7 +3,7 @@ package dev.farad2020.data.model
 
 data class TicketItem (
     val id: Int,
-    val badge: String,
+    val badge: String?,
     val price: PriceData,
     val providerName: String,
     val company: String,
@@ -11,8 +11,8 @@ data class TicketItem (
     val arrival: ArrivalData,
     val hasTransfer: Boolean,
     val hasVisaTransfer: Boolean,
-    val luggage: LuggageData,
-    val handLuggage: HandLuggageData,
+    val luggage: LuggageData?,
+    val handLuggage: HandLuggageData?,
     val isReturnable: Boolean,
     val isExchangable: Boolean
 )
@@ -32,7 +32,7 @@ data class ArrivalData (
 
 data class LuggageData (
     val hasLuggage: Boolean,
-    val price: PriceData
+    val price: PriceData? // if hasLuggage == false, then can but and has price
 )
 
 data class HandLuggageData (
