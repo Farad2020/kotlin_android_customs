@@ -10,25 +10,24 @@ import dev.farad2020.data.model.TicketOfferItem
 import dev.farad2020.domain.api.MockApi
 import dev.farad2020.domain.models.TicketOffersResponse
 import dev.farad2020.domain.models.TicketsResponse
+import dev.farad2020.domain.usecases.GetOffersUseCase
+import dev.farad2020.domain.usecases.GetTicketOffersUseCase
+import dev.farad2020.domain.utils.handleNetworkResult
 import dev.farad2020.planeticketseller.ui.base.DataMapper
 import kotlinx.coroutines.launch
 
-class DestinationSelectedViewModel : ViewModel() {
-    private val gson = Gson()
+class DestinationSelectedViewModel(
+    private val getTicketOffersUseCase: GetTicketOffersUseCase,
+) : ViewModel() {
 
     private val _ticketOffers = MutableLiveData<List<TicketOfferItem>>()
     val ticketOffers: LiveData<List<TicketOfferItem>> = _ticketOffers
 
-    private fun getMockTicketOffers() = MockApi.getTicketOffersResponseText()
-
     fun loadTickets(maxItemsNumber: Int){
         viewModelScope.launch {
-            val mockData = getMockTicketOffers()
-            val response = gson.fromJson(mockData, TicketOffersResponse::class.java)
-
-//            TODO when backend added, move casting to other layers
-//            '+ 1' - means, that last element should be swapped with "showMore" btn
-            _ticketOffers.value =  DataMapper.mapTicketOffersResponse(response).take(maxItemsNumber + 1)
+            handleNetworkResult(getTicketOffersUseCase.execute()) { ticketOffers ->
+                _ticketOffers.value = DataMapper.mapTicketOffersResponse(ticketOffers).take(maxItemsNumber + 1)
+            }
         }
     }
 }

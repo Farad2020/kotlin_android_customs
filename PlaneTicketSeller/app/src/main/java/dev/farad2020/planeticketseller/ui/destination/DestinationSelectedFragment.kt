@@ -15,13 +15,14 @@ import dev.farad2020.planeticketseller.ui.base.BindingFragment
 import dev.farad2020.planeticketseller.ui.base.getCurrentDateInRussianFormat
 import dev.farad2020.planeticketseller.ui.base.gone
 import dev.farad2020.planeticketseller.ui.base.visible
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
 class DestinationSelectedFragment : BindingFragment<FragmentDestinationSelectedBinding>(
     FragmentDestinationSelectedBinding::inflate
 ) {
 
-    private val ticketPageViewModel: DestinationSelectedViewModel by activityViewModels<DestinationSelectedViewModel>()
+    private val ticketPageViewModel: DestinationSelectedViewModel by sharedViewModel<DestinationSelectedViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,

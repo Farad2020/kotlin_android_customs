@@ -19,15 +19,12 @@ import kotlinx.coroutines.launch
 class TicketsViewModel(
     private val getOffersUseCase: GetOffersUseCase,
 ) : ViewModel() {
-    private val gson = Gson()
 
     private val _offers = MutableLiveData<List<OfferItem>>()
     val offers: LiveData<List<OfferItem>> = _offers
 
     private val _popularPlaces = MutableLiveData<List<PopularPlaceItem>>()
     val popularPlaces: LiveData<List<PopularPlaceItem>> = _popularPlaces
-
-    private fun getMockOffers() = MockApi.getOffersResponseText()
 
     fun loadOffers(){
         viewModelScope.launch {
