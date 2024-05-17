@@ -29,5 +29,6 @@ I hope this README provides a clear and informative overview of your Android cus
 3. [Enjoyyit Partner App](https://play.google.com/store/apps/details?id=dev.rnm.enjoyyit_partner&hl=en_US) - creation & development support
 4. [4you Client](https://play.google.com/store/apps/details?id=dev.rnm.a4you) - creation & development support
 5. [4you Partner](https://play.google.com/store/apps/details?id=dev.rnm.merchant_app&hl=ru&gl=US) - creation & development support
+6. [Просто Бэк-офис](https://play.google.com/store/apps/details?id=pbo.kz.android_client_app&hl=en) - development and refactoring of the app
 7. [Kino.kz](https://play.google.com/store/apps/details?id=kz.beemobile.kino&hl=ru&gl=US) - development support
 8. [Halyk Kazakhstan](https://play.google.com/store/apps/details?id=kz.kkb.homebank&hl=en_US) - Applinks implementation
