@@ -80,7 +80,7 @@ class SearchBottomSheet:
     }
 
     private fun openTempPage(){
-        TODO("Open Temp Page")
+        findNavController().navigate(R.id.tempFragment)
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

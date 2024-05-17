@@ -21,19 +21,20 @@
         android:id="@+id/navigation_shorter"
         android:name="dev.farad2020.planeticketseller.ui.notifications.NotificationsFragment"
         android:label="@string/title_shorter"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_subscriptions"
         android:name="dev.farad2020.planeticketseller.ui.notifications.NotificationsFragment"
         android:label="@string/title_subscriptions"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_profile"
         android:name="dev.farad2020.planeticketseller.ui.notifications.NotificationsFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_dashboard" />
+
     <fragment
         android:id="@+id/destinationSelectedFragment"
         android:name="dev.farad2020.planeticketseller.ui.destination.DestinationSelectedFragment"
@@ -48,4 +49,9 @@
         android:name="dev.farad2020.planeticketseller.ui.ticketList.TicketListFragment"
         android:label="fragment_ticket_list"
         tools:layout="@layout/fragment_ticket_list" />
+    <fragment
+        android:id="@+id/tempFragment"
+        android:name="dev.farad2020.planeticketseller.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>

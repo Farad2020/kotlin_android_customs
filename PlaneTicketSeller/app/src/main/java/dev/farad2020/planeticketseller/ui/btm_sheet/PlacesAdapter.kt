@@ -58,3 +58,4 @@ class PlacesAdapter(
             R.drawable.pic_place_3)
     }
 }
+
