@@ -13,27 +13,27 @@
 
     <fragment
         android:id="@+id/navigation_hotels"
-        android:name="dev.farad2020.planeticketseller.ui.dashboard.DashboardFragment"
+        android:name="dev.farad2020.planeticketseller.ui.example.ExampleFragment"
         android:label="@string/title_hotels"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_example" />
 
     <fragment
         android:id="@+id/navigation_shorter"
         android:name="dev.farad2020.planeticketseller.ui.notifications.NotificationsFragment"
         android:label="@string/title_shorter"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_example" />
 
     <fragment
         android:id="@+id/navigation_subscriptions"
         android:name="dev.farad2020.planeticketseller.ui.notifications.NotificationsFragment"
         android:label="@string/title_subscriptions"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_example" />
 
     <fragment
         android:id="@+id/navigation_profile"
         android:name="dev.farad2020.planeticketseller.ui.notifications.NotificationsFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_example" />
 
     <fragment
         android:id="@+id/destinationSelectedFragment"
@@ -51,7 +51,7 @@
         tools:layout="@layout/fragment_ticket_list" />
     <fragment
         android:id="@+id/tempFragment"
-        android:name="dev.farad2020.planeticketseller.ui.home.HomeFragment"
+        android:name="dev.farad2020.planeticketseller.ui.tempFragment.TempFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_temp" />
 </navigation>
