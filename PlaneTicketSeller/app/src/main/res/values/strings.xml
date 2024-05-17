@@ -47,5 +47,8 @@
     <string name="title_all_tickets_places">%1$s - %2$s</string>
     <string name="title_all_tickets_info">%1$s, %2$s</string>
 
+    <string name="flight_info_txt">Без пересадок</string>
+    <string name="flight_info_divider"> \u00A0 / \u00A0</string>
+
 
 </resources>
