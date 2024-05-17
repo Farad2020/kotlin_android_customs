@@ -43,6 +43,15 @@
     </style>
 
 
+    <style name="Title4Italic">
+        <item name="fontFamily">@font/sf_pro_display_regular_italic</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="fontWeight">600</item>
+        <item name="lineHeight">16.8sp</item>
+    </style>
+
+
     <style name="Text2">
         <item name="fontFamily">@font/sf_pro_display_semibold</item>
         <item name="android:textSize">14sp</item>

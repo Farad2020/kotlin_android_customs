@@ -34,7 +34,7 @@ class OffersAdapter(private val data: List<OfferItem>)
         holder.imageView.setImageResource(images[(item.id - 1) % 3])
         holder.title.text = item.title
         holder.city.text = item.city
-        holder.price.text =  "от ${item.getFormattedPrice()}₽"
+        holder.price.text =  "от ${item.getFormattedPrice()}"
     }
     
     

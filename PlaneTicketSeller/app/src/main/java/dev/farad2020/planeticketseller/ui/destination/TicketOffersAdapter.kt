@@ -13,8 +13,7 @@ import dev.farad2020.planeticketseller.databinding.LiTicketOfferBinding
 //TODO add margin when badge visible
 
 class TicketOffersAdapter(
-    private val data: List<TicketOfferItem>,
-    private val maxVisibleItems: Int
+    private val data: List<TicketOfferItem>
 )
     : RecyclerView.Adapter<TicketOffersAdapter.ItemViewHolder>() {
 
@@ -40,7 +39,7 @@ class TicketOffersAdapter(
         holder.ivState.setImageResource(stateIcons[position % 3])
         holder.title.text = item.title
         holder.time.text = item.timeRange.joinToString (separator = " ")
-        holder.price.text =  "${item.price.value} ₽"
+        holder.price.text =  item.price.getFormattedPrice()
     }
 
     override fun getItemCount() = data.size

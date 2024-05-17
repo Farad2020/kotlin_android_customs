@@ -1,5 +1,7 @@
 package dev.farad2020.data.model
 
+import java.text.DecimalFormat
+
 
 data class OfferItem(
     val id: Int,
@@ -9,7 +11,8 @@ data class OfferItem(
     ){
 
     fun getFormattedPrice(): String{
-        return price.toString()
+        val decimalFormat = DecimalFormat("#,###")
+        return decimalFormat.format(price.toLong()).replace(',', ' ') + " ₽"
     }
 }
 

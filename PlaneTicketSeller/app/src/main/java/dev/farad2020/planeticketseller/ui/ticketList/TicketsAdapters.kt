@@ -3,11 +3,9 @@ package dev.farad2020.planeticketseller.ui.ticketList
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import dev.farad2020.data.model.OfferItem
 import dev.farad2020.data.model.TicketItem
-import dev.farad2020.planeticketseller.R
-import dev.farad2020.planeticketseller.databinding.LiItemOfferBinding
 import dev.farad2020.planeticketseller.databinding.LiTicketBinding
+import dev.farad2020.planeticketseller.ui.base.formatTime24H
 import dev.farad2020.planeticketseller.ui.base.gone
 import dev.farad2020.planeticketseller.ui.base.visible
 
@@ -52,9 +50,9 @@ class TicketsAdapters(
         holder.price.text = item.price.getFormattedPrice() // Assuming getFormattedPrice() exists
 
 // Departure and arrival data
-        holder.departureDate.text = item.departure.date
+        holder.departureDate.text = formatTime24H(item.departure.date)
         holder.departureAirport.text = item.departure.airport
-        holder.arrivalDate.text = item.arrival.date
+        holder.arrivalDate.text = formatTime24H(item.arrival.date)
         holder.arrivalAirport.text = item.arrival.airport
 
 // Flight information

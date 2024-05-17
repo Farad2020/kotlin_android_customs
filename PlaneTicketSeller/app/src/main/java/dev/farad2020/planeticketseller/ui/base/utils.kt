@@ -19,3 +19,10 @@ fun getCurrentDateInRussianFormat(): String {
     val dateFormat = SimpleDateFormat("dd MMM, EEE", Locale("ru"))
     return dateFormat.format(calendar.time)
 }
+
+fun formatTime24H(dateString: String): String {
+    val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+    val outputFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
+    val date = inputFormat.parse(dateString)
+    return outputFormat.format(date)
+}

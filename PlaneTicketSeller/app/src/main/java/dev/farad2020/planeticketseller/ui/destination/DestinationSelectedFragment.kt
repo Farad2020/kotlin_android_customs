@@ -47,7 +47,7 @@ class DestinationSelectedFragment : BindingFragment<FragmentDestinationSelectedB
 
     private fun setupObservers(){
         ticketPageViewModel.ticketOffers.observe(viewLifecycleOwner){ ticketOffers ->
-            val adapter = TicketOffersAdapter(ticketOffers, TICKETS_TO_SHOW)
+            val adapter = TicketOffersAdapter(ticketOffers)
             binding.snippetFlights.rcPlaces.adapter = adapter
 
             if(ticketOffers.size > TICKETS_TO_SHOW){
@@ -65,6 +65,10 @@ class DestinationSelectedFragment : BindingFragment<FragmentDestinationSelectedB
 
         binding.tvShowTickets.setOnClickListener {
             openTickets()
+        }
+
+        binding.snippetFlights.tvShowAll.setOnClickListener {
+//            openTickets()
         }
 
     }

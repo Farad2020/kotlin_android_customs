@@ -1,23 +1,14 @@
 package dev.farad2020.data.model
 
+import java.text.DecimalFormat
+
 
 data class PriceData (
     val value : Int
 ){
     fun getFormattedPrice(): String{
-        return value.toString()
+        val decimalFormat = DecimalFormat("#,###")
+        return decimalFormat.format(value.toLong()).replace(',', ' ') + " ₽"
     }
 
-    //TODO add formatter for price value
-    fun formatToPriceStr(price: Int): String {
-        val reversed = price.toString().reversed()
-        val stringBuilder = StringBuilder()
-        for (i in reversed.indices) {
-            stringBuilder.append(reversed[i])
-            if (i > 2 && (i + 1) % 4 == 0) {
-                stringBuilder.append(' ')
-            }
-        }
-        return stringBuilder.reversed().toString()
-    }
 }
