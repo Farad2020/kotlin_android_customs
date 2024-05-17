@@ -1,6 +1,9 @@
 package dev.farad2020.planeticketseller.ui.base
 
 import android.view.View
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 fun View.visible(isVisible: Boolean, visibilityType: Int = View.INVISIBLE) {
     visibility = if (isVisible) View.VISIBLE else visibilityType
@@ -21,4 +24,11 @@ fun formatToPriceStr(price: Int): String {
         }
     }
     return stringBuilder.reversed().toString()
+}
+
+
+fun getCurrentDateInRussianFormat(): String {
+    val calendar = Calendar.getInstance()
+    val dateFormat = SimpleDateFormat("dd MMM, EEE", Locale("ru"))
+    return dateFormat.format(calendar.time)
 }

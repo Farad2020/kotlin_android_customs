@@ -1,13 +1,18 @@
 package dev.farad2020.planeticketseller.ui.destination
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.datepicker.MaterialDatePicker
+import dev.farad2020.planeticketseller.R
 import dev.farad2020.planeticketseller.databinding.FragmentDestinationSelectedBinding
 import dev.farad2020.planeticketseller.ui.base.BindingFragment
+import dev.farad2020.planeticketseller.ui.base.getCurrentDateInRussianFormat
 import dev.farad2020.planeticketseller.ui.base.gone
 import dev.farad2020.planeticketseller.ui.base.visible
 
@@ -52,13 +57,9 @@ class DestinationSelectedFragment : BindingFragment<FragmentDestinationSelectedB
     }
 
     private fun setupView(){
-//        binding.searchbar.root.setOnClickListener {
-//            showBottomSheet()
-//        }
+        setupSearchBar()
 
-        binding.searchbar.icBack.setOnClickListener {
-            findNavController().navigateUp()
-        }
+        setupActionButtons()
 
         binding.tvShowTickets.setOnClickListener {
             val action =
@@ -66,6 +67,45 @@ class DestinationSelectedFragment : BindingFragment<FragmentDestinationSelectedB
             findNavController().navigate(action)
         }
 
+    }
+
+    private fun setupSearchBar(){
+        binding.searchbar.icSwap.setOnClickListener {
+            swapSearchbarInputs()
+        }
+
+        binding.searchbar.icBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
+    }
+
+    private fun setupActionButtons(){
+        binding.chipGroup.apply {
+            chipBack.setOnClickListener {
+//                showDatePicker()
+            }
+
+
+            tvDate.text = getCurrentDateInRussianFormat()
+
+            chipDate.setOnClickListener {
+
+            }
+
+            chipType.setOnClickListener {
+//              Do nothing
+            }
+
+            chipFilters.setOnClickListener {
+//              Do nothing
+            }
+        }
+    }
+
+    private fun swapSearchbarInputs(){
+        val textFirst = binding.searchbar.searchTextFirst.text
+        binding.searchbar.searchTextFirst.text = binding.searchbar.searchTextSecond.text
+        binding.searchbar.searchTextSecond.text = textFirst
     }
 
 

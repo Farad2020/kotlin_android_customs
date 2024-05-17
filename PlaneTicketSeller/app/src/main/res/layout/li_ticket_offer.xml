@@ -17,7 +17,7 @@
 
         <TextView
             android:id="@+id/tvTitle"
-            style="@style/Text4"
+            style="@style/Text4Italic"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -38,7 +38,7 @@
             app:layout_constraintEnd_toEndOf="parent">
                 <TextView
                     android:id="@+id/tvPrice"
-                    style="@style/Text4"
+                    style="@style/Text4Italic"
                     android:textColor="@color/text_blue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
                     android:layout_width="16dp"
                     android:layout_height="16dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_home_black_24dp"
+                    android:src="@drawable/ic_blue_right"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
 
@@ -64,7 +64,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             tools:text="07:00  09:10   10:00  11:00  12:00  13:00  12:00 07:00  09:10   10:00  11:00  12:00  13:00  12:00"
-            android:textColor="@color/text_gray_2"
             android:maxLines="1"
             android:ellipsize="end"
             app:layout_constraintHorizontal_bias="0"
