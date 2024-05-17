@@ -6,5 +6,10 @@ data class OfferItem(
     val title: String,
     val city: String,
     val price: Int,
-    )
+    ){
+
+    fun getFormattedPrice(): String{
+        return price.toString()
+    }
+}
 

@@ -13,19 +13,6 @@ fun View.gone(isGone: Boolean, visibilityType: Int = View.VISIBLE) {
     visibility = if (isGone) View.GONE else visibilityType
 }
 
-//TODO add formatter for price value
-fun formatToPriceStr(price: Int): String {
-    val reversed = price.toString().reversed()
-    val stringBuilder = StringBuilder()
-    for (i in reversed.indices) {
-        stringBuilder.append(reversed[i])
-        if (i > 2 && (i + 1) % 4 == 0) {
-            stringBuilder.append(' ')
-        }
-    }
-    return stringBuilder.reversed().toString()
-}
-
 
 fun getCurrentDateInRussianFormat(): String {
     val calendar = Calendar.getInstance()

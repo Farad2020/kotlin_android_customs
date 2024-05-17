@@ -46,12 +46,24 @@ class TicketsAdapters(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = data[position]
 
-//        Might Trigger outOfBounds, should add check later or add to caster
-//        holder.imageView.setImageResource(images[(item.id - 1) % 3])
-//        holder.title.text = item.title
-//        holder.city.text = item.city
-//
-//        holder.price.text =  "от ${addSpacesFromEnd(item.price.toString())}₽"
+        holder.badge.gone(item.badge != null)
+        holder.badge.text = item.badge ?: ""
+
+        holder.price.text = item.price.getFormattedPrice() // Assuming getFormattedPrice() exists
+
+// Departure and arrival data
+        holder.departureDate.text = item.departure.date
+        holder.departureAirport.text = item.departure.airport
+        holder.arrivalDate.text = item.arrival.date
+        holder.arrivalAirport.text = item.arrival.airport
+
+// Flight information
+//        val flightInfoText = getFlightInfoString(item)
+        val flightInfoText = "info example"
+        holder.flightInfo.text = flightInfoText
+
+// Handle optional flight length based on data availability
+        holder.flightLength.text = "add flight exchange"
     }
 
     private fun handleBadge(holder: ItemViewHolder, text: String = "" ){
