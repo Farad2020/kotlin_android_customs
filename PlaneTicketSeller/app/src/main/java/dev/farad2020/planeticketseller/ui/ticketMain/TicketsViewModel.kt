@@ -9,10 +9,16 @@ import dev.farad2020.data.model.OfferItem
 import dev.farad2020.data.model.PopularPlaceItem
 import dev.farad2020.domain.api.MockApi
 import dev.farad2020.domain.models.OffersResponse
+import dev.farad2020.domain.usecases.GetOffersUseCase
+import dev.farad2020.domain.utils.NetworkResult
+import dev.farad2020.domain.utils.handleNetworkResult
+import dev.farad2020.planeticketseller.ui.base.DataMapper
 import kotlinx.coroutines.launch
 
-class TicketsViewModel : ViewModel() {
-    private val gson = Gson()
+//TODO maybe add basevm to check for connectivity
+class TicketsViewModel(
+    private val getOffersUseCase: GetOffersUseCase,
+) : ViewModel() {
 
     private val _offers = MutableLiveData<List<OfferItem>>()
     val offers: LiveData<List<OfferItem>> = _offers
@@ -20,22 +26,10 @@ class TicketsViewModel : ViewModel() {
     private val _popularPlaces = MutableLiveData<List<PopularPlaceItem>>()
     val popularPlaces: LiveData<List<PopularPlaceItem>> = _popularPlaces
 
-    private fun getMockOffers() = MockApi.getOffersResponseText()
-
     fun loadOffers(){
         viewModelScope.launch {
-            val mockData = getMockOffers()
-            val response = gson.fromJson(mockData, OffersResponse::class.java)
-
-
-//            TODO when backend added, move casting to other layers
-            _offers.value = response.offers.map { offerData ->
-                OfferItem(
-                    offerData.id ?: 1,
-                    offerData.title ?: "",
-                    offerData.town ?: "Town",
-                    offerData.price?.value ?: 0,
-                )
+            handleNetworkResult(getOffersUseCase.execute()) { offers ->
+                _offers.value = DataMapper.mapToOffers(offers)
             }
         }
     }

@@ -9,15 +9,15 @@ data class TicketsResponse (
 data class Tickets (
     @SerializedName("id"                ) var id              : Int?         = null,
     @SerializedName("badge"             ) var badge           : String?      = null,
-    @SerializedName("price"             ) var price           : Price?       = Price(),
+    @SerializedName("price"             ) var price           : Price?       = null,
     @SerializedName("provider_name"     ) var providerName    : String?      = null,
     @SerializedName("company"           ) var company         : String?      = null,
-    @SerializedName("departure"         ) var departure       : Departure?   = Departure(),
-    @SerializedName("arrival"           ) var arrival         : Arrival?     = Arrival(),
+    @SerializedName("departure"         ) var departure       : Departure?   = null,
+    @SerializedName("arrival"           ) var arrival         : Arrival?     = null,
     @SerializedName("has_transfer"      ) var hasTransfer     : Boolean?     = null,
     @SerializedName("has_visa_transfer" ) var hasVisaTransfer : Boolean?     = null,
-    @SerializedName("luggage"           ) var luggage         : Luggage?     = Luggage(),
-    @SerializedName("hand_luggage"      ) var handLuggage     : HandLuggage? = HandLuggage(),
+    @SerializedName("luggage"           ) var luggage         : Luggage?     = null,
+    @SerializedName("hand_luggage"      ) var handLuggage     : HandLuggage? = null,
     @SerializedName("is_returnable"     ) var isReturnable    : Boolean?     = null,
     @SerializedName("is_exchangable"    ) var isExchangable   : Boolean?     = null
 )
@@ -36,12 +36,12 @@ data class Arrival (
 )
 
 data class Luggage (
-    @SerializedName("has_luggage" ) var hasLuggage : Boolean? = null,
+    @SerializedName("has_luggage" ) var hasLuggage : Boolean,
     @SerializedName("price"       ) var price      : Price?   = Price()
 )
 
 data class HandLuggage (
-    @SerializedName("has_hand_luggage" ) var hasHandLuggage : Boolean? = null,
+    @SerializedName("has_hand_luggage" ) var hasHandLuggage : Boolean,
     @SerializedName("size"             ) var size           : String?  = null
 )
 

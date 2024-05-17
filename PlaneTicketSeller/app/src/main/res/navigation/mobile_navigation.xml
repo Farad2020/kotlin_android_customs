@@ -13,27 +13,28 @@
 
     <fragment
         android:id="@+id/navigation_hotels"
-        android:name="dev.farad2020.planeticketseller.ui.dashboard.DashboardFragment"
+        android:name="dev.farad2020.planeticketseller.ui.example.ExampleFragment"
         android:label="@string/title_hotels"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_example" />
 
     <fragment
         android:id="@+id/navigation_shorter"
         android:name="dev.farad2020.planeticketseller.ui.notifications.NotificationsFragment"
         android:label="@string/title_shorter"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_example" />
 
     <fragment
         android:id="@+id/navigation_subscriptions"
         android:name="dev.farad2020.planeticketseller.ui.notifications.NotificationsFragment"
         android:label="@string/title_subscriptions"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_example" />
 
     <fragment
         android:id="@+id/navigation_profile"
         android:name="dev.farad2020.planeticketseller.ui.notifications.NotificationsFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_example" />
+
     <fragment
         android:id="@+id/destinationSelectedFragment"
         android:name="dev.farad2020.planeticketseller.ui.destination.DestinationSelectedFragment"
@@ -42,10 +43,22 @@
         <action
             android:id="@+id/action_destinationSelectedFragment_to_ticketListFragment"
             app:destination="@id/ticketListFragment" />
+        <argument
+            android:name="pageData"
+            app:argType="dev.farad2020.planeticketseller.ui.navModel.DestinationFragmentNavPayload" />
     </fragment>
     <fragment
         android:id="@+id/ticketListFragment"
         android:name="dev.farad2020.planeticketseller.ui.ticketList.TicketListFragment"
         android:label="fragment_ticket_list"
-        tools:layout="@layout/fragment_ticket_list" />
+        tools:layout="@layout/fragment_ticket_list" >
+        <argument
+            android:name="pageData"
+            app:argType="dev.farad2020.planeticketseller.ui.navModel.TicketListNavPayload" />
+    </fragment>
+    <fragment
+        android:id="@+id/tempFragment"
+        android:name="dev.farad2020.planeticketseller.ui.tempFragment.TempFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_temp" />
 </navigation>

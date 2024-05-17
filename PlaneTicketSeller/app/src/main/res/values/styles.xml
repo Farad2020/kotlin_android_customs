@@ -10,7 +10,6 @@
 
 <!--    For Bottom Sheet-->
     <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
-
         <item name="android:typeface">monospace</item>
         <item name="android:background">@drawable/bg_btm_sheet</item>
     </style>
@@ -22,4 +21,15 @@
     </style>
 
     <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog" />
+
+
+<!--    For Calendar-->
+    <style name="CustomMaterialCalendarTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
+        <item name="colorPrimary">@color/bg_main</item>
+        <item name="colorPrimaryVariant">@color/bg_secondary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/text_gray</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Customize more as needed -->
+    </style>
 </resources>

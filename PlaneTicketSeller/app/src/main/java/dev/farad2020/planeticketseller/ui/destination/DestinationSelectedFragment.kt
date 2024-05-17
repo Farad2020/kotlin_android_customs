@@ -4,21 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import dev.farad2020.planeticketseller.databinding.FragmentDestinationSelectedBinding
-import dev.farad2020.planeticketseller.databinding.FragmentTicketListBinding
-import dev.farad2020.planeticketseller.databinding.FragmentTicketsMainBinding
 import dev.farad2020.planeticketseller.ui.base.BindingFragment
-import dev.farad2020.planeticketseller.ui.base.ItemSpacingDecoration
-import dev.farad2020.planeticketseller.ui.btm_sheet.SearchBottomSheet
+import dev.farad2020.planeticketseller.ui.base.getCurrentDateInRussianFormat
+import dev.farad2020.planeticketseller.ui.base.gone
+import dev.farad2020.planeticketseller.ui.base.visible
+import dev.farad2020.planeticketseller.ui.navModel.TicketListNavPayload
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
 class DestinationSelectedFragment : BindingFragment<FragmentDestinationSelectedBinding>(
     FragmentDestinationSelectedBinding::inflate
 ) {
 
-    private val ticketPageViewModel: DestinationSelectedViewModel by activityViewModels<DestinationSelectedViewModel>()
+    private val args by navArgs<DestinationSelectedFragmentArgs>()
+    private val ticketPageViewModel: DestinationSelectedViewModel by sharedViewModel<DestinationSelectedViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,36 +33,101 @@ class DestinationSelectedFragment : BindingFragment<FragmentDestinationSelectedB
 
         setupView()
 
-//        setupObservers()
+        setupObservers()
 
         return binding.root
     }
 
     private fun setupViewModel(){
-        ticketPageViewModel.loadTickets()
+        ticketPageViewModel.loadTickets(TICKETS_TO_SHOW)
     }
 
     private fun setupObservers(){
-        ticketPageViewModel.tickets.observe(viewLifecycleOwner){ offers ->
-//            val adapter = FlightsAdapters(offers)  // Replace with your data list
-//            binding.snippetFlights.rcPlaces.adapter = adapter
+        ticketPageViewModel.ticketOffers.observe(viewLifecycleOwner){ ticketOffers ->
+            val adapter = TicketOffersAdapter(ticketOffers)
+            binding.snippetFlights.rcPlaces.adapter = adapter
+
+            if(ticketOffers.size > TICKETS_TO_SHOW){
+                binding.snippetFlights.tvShowAll.gone(true)
+            }else{
+                binding.snippetFlights.tvShowAll.visible(true)
+            }
         }
     }
 
     private fun setupView(){
-//        binding.searchbar.root.setOnClickListener {
-//            showBottomSheet()
-//        }
+        setupSearchBar()
+
+        setupActionButtons()
+
+        binding.tvShowTickets.setOnClickListener {
+            openTickets()
+        }
+
+        binding.snippetFlights.tvShowAll.setOnClickListener {
+//            openTickets()
+        }
+
+    }
+
+    private fun openTickets(){
+        val pageData = TicketListNavPayload(
+            departureCity = binding.searchbar.searchTextFirst.text.toString(),
+            arrivalCity = binding.searchbar.searchTextSecond.text.toString(),
+            flightDate = binding.chipGroup.tvDate.text.toString(),
+            flightInfo = binding.chipGroup.tvFlightInfo.text.toString()
+        )
+
+        val action =
+            DestinationSelectedFragmentDirections.actionDestinationSelectedFragmentToTicketListFragment(pageData)
+        findNavController().navigate(action)
+    }
+
+    private fun setupSearchBar(){
+        binding.searchbar.icSwap.setOnClickListener {
+            swapSearchbarInputs()
+        }
 
         binding.searchbar.icBack.setOnClickListener {
             findNavController().navigateUp()
         }
 
-        binding.tvShowTickets.setOnClickListener {
-            val action =
-                DestinationSelectedFragmentDirections.actionDestinationSelectedFragmentToTicketListFragment()
-            findNavController().navigate(action)
-        }
+        binding.searchbar.searchTextFirst.text = args.pageData.departureCity
+        binding.searchbar.searchTextSecond.text = args.pageData.arrivalCity
+    }
 
+    private fun setupActionButtons(){
+        binding.chipGroup.apply {
+            chipBack.setOnClickListener {
+//                showDatePicker()
+            }
+
+
+            tvDate.text = getCurrentDateInRussianFormat()
+
+            chipDate.setOnClickListener {
+
+            }
+
+            chipType.setOnClickListener {
+//              Do nothing
+            }
+
+            chipFilters.setOnClickListener {
+//              Do nothing
+            }
+        }
+    }
+
+    private fun swapSearchbarInputs(){
+        val textFirst = binding.searchbar.searchTextFirst.text
+        binding.searchbar.searchTextFirst.text = binding.searchbar.searchTextSecond.text
+        binding.searchbar.searchTextSecond.text = textFirst
+    }
+
+
+
+    companion object{
+        const val TICKETS_TO_SHOW = 3
     }
 }

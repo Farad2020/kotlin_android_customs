@@ -16,4 +16,5 @@ interface PlaneTicketRepository {
     suspend fun getTickets(): Flow<NetworkResult<TicketsResponse>>
 
     suspend fun getTicketOffers(): Flow<NetworkResult<TicketOffersResponse>>
+
 }

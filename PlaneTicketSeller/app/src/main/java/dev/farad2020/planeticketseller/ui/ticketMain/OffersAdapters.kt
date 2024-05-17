@@ -34,19 +34,7 @@ class OffersAdapter(private val data: List<OfferItem>)
         holder.imageView.setImageResource(images[(item.id - 1) % 3])
         holder.title.text = item.title
         holder.city.text = item.city
-        holder.price.text =  "от ${addSpacesFromEnd(item.price.toString())}₽"
-    }
-
-    fun addSpacesFromEnd(text: String): String {
-        val reversed = text.reversed()
-        val stringBuilder = StringBuilder()
-        for (i in reversed.indices) {
-            stringBuilder.append(reversed[i])
-            if (i > 2 && (i + 1) % 4 == 0) {
-                stringBuilder.append(' ')
-            }
-        }
-        return stringBuilder.reversed().toString()
+        holder.price.text =  "от ${item.getFormattedPrice()}"
     }
     
     
