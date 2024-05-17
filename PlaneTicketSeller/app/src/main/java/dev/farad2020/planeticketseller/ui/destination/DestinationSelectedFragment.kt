@@ -1,15 +1,11 @@
 package dev.farad2020.planeticketseller.ui.destination
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
-import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.datepicker.MaterialDatePicker
-import dev.farad2020.planeticketseller.R
+import androidx.navigation.fragment.navArgs
 import dev.farad2020.planeticketseller.databinding.FragmentDestinationSelectedBinding
 import dev.farad2020.planeticketseller.ui.base.BindingFragment
 import dev.farad2020.planeticketseller.ui.base.getCurrentDateInRussianFormat
@@ -23,6 +19,7 @@ class DestinationSelectedFragment : BindingFragment<FragmentDestinationSelectedB
     FragmentDestinationSelectedBinding::inflate
 ) {
 
+    private val args by navArgs<DestinationSelectedFragmentArgs>()
     private val ticketPageViewModel: DestinationSelectedViewModel by sharedViewModel<DestinationSelectedViewModel>()
 
     override fun onCreateView(
@@ -94,6 +91,9 @@ class DestinationSelectedFragment : BindingFragment<FragmentDestinationSelectedB
         binding.searchbar.icBack.setOnClickListener {
             findNavController().navigateUp()
         }
+
+        binding.searchbar.searchTextFirst.text = args.pageData.departureCity
+        binding.searchbar.searchTextSecond.text = args.pageData.arrivalCity
     }
 
     private fun setupActionButtons(){

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/bg_btm_sheet"
@@ -37,20 +37,23 @@
             android:id="@+id/rcLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="16dp"
-            android:paddingBottom="16dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/bg_rounded_searchbar"
-            app:layout_constraintTop_toBottomOf="@+id/layout_actions">
+            android:paddingHorizontal="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_actions"
+            tools:layout_editor_absoluteX="16dp">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcPlaces"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:itemCount="3"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/li_item_city"/>
+                    tools:itemCount="3"
+                    tools:listitem="@layout/li_item_city" />
 
 
         </FrameLayout>

@@ -48,6 +48,8 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
 
+    implementation("com.hannesdorfmann:adapterdelegates4:4.3.0")
+
     implementation("com.jakewharton.timber:timber:5.0.1")
     implementation("com.google.code.gson:gson:2.10.1")
 

@@ -74,7 +74,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="16dp"
-            android:src="@drawable/ic_home_black_24dp"
+            android:src="@drawable/ic_bell_blue"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView"
             app:layout_constraintBottom_toBottomOf="@+id/textView"/>
@@ -94,6 +94,8 @@
             app:layout_constraintStart_toEndOf="@id/ivMain"
             app:layout_constraintTop_toTopOf="@+id/toggleSubscribe" />
 
+
+<!--        TODO update switch later-->
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/toggleSubscribe"
             android:layout_width="wrap_content"
@@ -102,6 +104,8 @@
             android:foregroundGravity="center"
             android:visibility="visible"
             android:checked="true"
+            android:thumb="@drawable/switch_knob_blue"
+            app:track="@drawable/switch_track_blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>

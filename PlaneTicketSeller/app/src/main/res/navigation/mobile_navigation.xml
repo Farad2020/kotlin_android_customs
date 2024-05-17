@@ -43,6 +43,9 @@
         <action
             android:id="@+id/action_destinationSelectedFragment_to_ticketListFragment"
             app:destination="@id/ticketListFragment" />
+        <argument
+            android:name="pageData"
+            app:argType="dev.farad2020.planeticketseller.ui.navModel.DestinationFragmentNavPayload" />
     </fragment>
     <fragment
         android:id="@+id/ticketListFragment"
