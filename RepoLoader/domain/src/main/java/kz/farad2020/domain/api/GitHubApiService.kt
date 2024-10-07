@@ -4,7 +4,7 @@ import kz.farad2020.domain.model.GitHubSearchResult
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface GitHubService {
+interface GitHubApiService {
 //    TODO -> https://docs.github.com/en/rest?apiVersion=2022-11-28
 //      use https://api.github.com/search/repositories?q=your_search_keyword to get data on repos
 

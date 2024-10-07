@@ -43,6 +43,8 @@ dependencies {
     implementation(libs.material)
 
     implementation(libs.com.squareup.retrofit2.retrofit)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
     implementation(libs.converter.gson)
     implementation(libs.dagger.hilt.android)
     kapt(libs.hilt.android.compiler)
