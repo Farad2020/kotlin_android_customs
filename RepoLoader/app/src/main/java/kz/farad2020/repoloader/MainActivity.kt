@@ -9,7 +9,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
-import kz.farad2020.core.model.ExampleClass
 import kz.farad2020.repoloader.databinding.ActivityMainBinding
 
 @AndroidEntryPoint
@@ -18,11 +17,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+//      installSplashScreen - has an issue, where it doesn't show icon on androidStudio install
+//      just launch app directly, without Studio's launcher, and should work fine
         val splashScreen = installSplashScreen()
 
         super.onCreate(savedInstanceState)
-
-        val data: ExampleClass = ExampleClass("test")
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

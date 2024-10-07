@@ -12,7 +12,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Named
+import javax.inject.Qualifier
 import javax.inject.Singleton
 
 
@@ -21,9 +21,27 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object MainModule {
 
+    @Qualifier
+    @Retention(AnnotationRetention.BINARY)
+    annotation class LoggerInterceptorOkHttpClient
+
+    @Qualifier
+    @Retention(AnnotationRetention.BINARY)
+    annotation class MainOkHttpOkHttpClient
+
+    @Qualifier
+    @Retention(AnnotationRetention.BINARY)
+    annotation class MainRetrofit
+
+    @Qualifier
+    @Retention(AnnotationRetention.BINARY)
+    annotation class GitHubApiServiceQual
+
+
+
     @Singleton
     @Provides
-    @Named("LoggingInterceptor")
+    @LoggerInterceptorOkHttpClient
     fun provideLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().apply {
 //            TODO add check for debug version
@@ -34,9 +52,9 @@ object MainModule {
 
     @Singleton
     @Provides
-    @Named("MainOkHttp")
+    @MainOkHttpOkHttpClient
     fun provideOkHttp(
-        @Named("LoggingInterceptor") interceptor: HttpLoggingInterceptor
+        @LoggerInterceptorOkHttpClient interceptor: HttpLoggingInterceptor
     ): OkHttpClient{
         return OkHttpClient.Builder()
             .addInterceptor(interceptor)
@@ -45,9 +63,9 @@ object MainModule {
 
     @Singleton
     @Provides
-    @Named("MainRetrofit")
+    @MainRetrofit
     fun provideRetrofit(
-        @Named("MainOkHttp") okHttpClient: OkHttpClient
+        @MainOkHttpOkHttpClient okHttpClient: OkHttpClient
     ): Retrofit{
         return Retrofit.Builder()
             .baseUrl(AppBaseUrls.GITHUB_API_URL)
@@ -59,16 +77,16 @@ object MainModule {
 
     @Singleton
     @Provides
-    @Named("GitHubService")
+    @GitHubApiServiceQual
     fun provideGitHubApiService(
-        @Named("MainRetrofit") retrofit: Retrofit
+        @MainRetrofit retrofit: Retrofit
     ): GitHubApiService = retrofit.create(GitHubApiService::class.java)
 
 
     @Singleton
     @Provides
     fun provideMainRepository(
-        @Named("GitHubService") apiService: GitHubApiService
+        @GitHubApiServiceQual apiService: GitHubApiService
     ): MainRepository = MainRepoImpl(apiService)
 
 }
