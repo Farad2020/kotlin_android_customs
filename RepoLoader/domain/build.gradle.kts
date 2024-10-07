@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
@@ -42,8 +44,16 @@ dependencies {
 
     implementation(libs.com.squareup.retrofit2.retrofit)
     implementation(libs.converter.gson)
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.hilt.android.compiler)
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }
