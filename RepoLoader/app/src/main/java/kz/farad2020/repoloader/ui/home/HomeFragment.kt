@@ -10,32 +10,31 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
 import kz.farad2020.repoloader.databinding.FragmentHomeBinding
+import kz.farad2020.repoloader.ui.base.BindingFragment
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : BindingFragment<FragmentHomeBinding>(
+    FragmentHomeBinding::inflate
+) {
 
     private val viewModel: HomeViewModel by viewModels()
-
-    private var _binding: FragmentHomeBinding? = null
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        super.onCreateView(inflater, container, savedInstanceState)
 
+        setupViews()
+
+        return binding.root
+    }
+
+    private fun setupViews(){
         val textView: TextView = binding.textHome
         viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-        return root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
