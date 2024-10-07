@@ -16,6 +16,7 @@ lifecycleViewmodelKtx = "2.8.6"
 navigationFragmentKtx = "2.6.0"
 navigationUiKtx = "2.6.0"
 squareupRetrofitVersion = "2.9.0"
+timber = "5.0.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -36,6 +37,7 @@ com-squareup-retrofit2-retrofit = { module = "com.squareup.retrofit2:retrofit", 
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "squareupRetrofitVersion" }
 dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidVersion" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidVersion" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
 
 [plugins]
