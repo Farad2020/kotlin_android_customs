@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import kz.farad2020.core.model.ExampleClass
 import kz.farad2020.repoloader.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +16,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val data: ExampleClass = ExampleClass("test")
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
