@@ -45,10 +45,12 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(
         setupEtSearch()
     }
 
+//   TODO add loader ic, close keyboard
     private fun setupEtSearch(){
         binding.etSearch.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_SEARCH) {
-                performSearch(binding.etSearch.text.toString())
+                val query = binding.etSearch.text.toString().trim()
+                viewModel.performSearch(query)
 
                 // Event consumed
                 true
@@ -59,19 +61,15 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(
         }
     }
 
-    private fun performSearch(query: String) {
-        Toast.makeText(requireContext(), "Search query: $query", Toast.LENGTH_SHORT).show()
-    }
-
+//   TODO add loader ic, close keyboard
     private fun setupRcRepositories(){
-        val data = listOf(
-            Pair("Title 1", "This is the subtitle 1"),
-            Pair("Title 2", "This is the subtitle 2"),
-            Pair("Title 3", "This is the subtitle 3"),
-            Pair("Title 4", "This is the subtitle 4")
-        )
-
-        val adapter = RepositoriesAdapter(data)
-        binding.rcRepositories.adapter = adapter
+        viewModel.list.observe(viewLifecycleOwner){ repositories ->
+            if(binding.rcRepositories.adapter != null && binding.rcRepositories.adapter is RepositoriesAdapter){
+                (binding.rcRepositories.adapter as RepositoriesAdapter).replaceRepositories(repositories)
+            }else{
+                val adapter = RepositoriesAdapter(repositories.toMutableList())
+                binding.rcRepositories.adapter = adapter
+            }
+        }
     }
 }
