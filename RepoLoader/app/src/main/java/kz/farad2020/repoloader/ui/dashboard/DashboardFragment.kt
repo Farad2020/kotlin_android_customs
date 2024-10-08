@@ -48,22 +48,9 @@ class DashboardFragment : BindingFragment<FragmentDashboardBinding>(
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        setMessageListener()
-
         checkFilesPermission()
 
         return binding.root
-    }
-
-    private fun setMessageListener(){
-        viewModel.text.observe(viewLifecycleOwner) {
-            if(it.trim().isEmpty()){
-                binding.textDashboard.gone()
-            }else{
-                binding.textDashboard.text = it
-                binding.textDashboard.visible()
-            }
-        }
     }
 
     private fun checkFilesPermission(){
@@ -86,17 +73,10 @@ class DashboardFragment : BindingFragment<FragmentDashboardBinding>(
 
             if (files != null) {
                 showDownloadedRepositories(files.toList())
-                viewModel.setMessage("")
-            }
-
-            files?.let {
-                for (file in it) {
-                    // Do something with each file (e.g., log file names)
-                    println("File: ${file.name}")
-                }
+                binding.tvMessage.gone()
             }
         } else {
-            viewModel.setMessage("Download directory does not exist or is not a directory.")
+            binding.tvMessage.visible()
         }
     }
 

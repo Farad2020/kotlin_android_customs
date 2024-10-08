@@ -7,4 +7,5 @@
     <string name="title">Title</string>
     <string name="subtitle">Subtitle or description goes here</string>
     <string name="empty_results">No results to show</string>
+    <string name="empty_files">No directories to show</string>
 </resources>
