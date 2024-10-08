@@ -1,5 +1,7 @@
 package kz.farad2020.repoloader.ui.home
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -122,7 +124,12 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(
         viewModel.downloadRepository(data)
     }
 
-    override fun onOpenWvForRepository(data: GitHubRepository) {
-        Toast.makeText(requireContext(), "add WebView", Toast.LENGTH_SHORT).show()
+    /**
+     * I could use here webview, but for now not necessary
+     */
+    override fun onOpenBrowser(data: GitHubRepository) {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(data.htmlUrl)
+        startActivity(intent)
     }
 }

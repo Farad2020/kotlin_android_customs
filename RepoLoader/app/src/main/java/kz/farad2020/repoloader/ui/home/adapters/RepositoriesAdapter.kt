@@ -13,7 +13,7 @@ class RepositoriesAdapter(
 
     interface OnClickRepo{
         fun onDownloadRepository(data: GitHubRepository)
-        fun onOpenWvForRepository(data: GitHubRepository)
+        fun onOpenBrowser(data: GitHubRepository)
     }
 
 
@@ -30,7 +30,8 @@ class RepositoriesAdapter(
         : RecyclerView.ViewHolder(binding.root) {
         val title = binding.titleText
         val subtitle = binding.subtitleText
-        val root = binding.root
+        val icWeb = binding.webIcon
+        val icDownload = binding.downloadIcon
     }
 
     // Replace the contents of a view (invoked by the layout manager)
@@ -39,7 +40,11 @@ class RepositoriesAdapter(
         holder.title.text = item.name
         holder.subtitle.text = item.description
 
-        holder.root.setOnClickListener{
+        holder.icWeb.setOnClickListener{
+            listener.onOpenBrowser(item)
+        }
+
+        holder.icDownload.setOnClickListener{
             listener.onDownloadRepository(item)
         }
     }
