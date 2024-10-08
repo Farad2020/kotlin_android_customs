@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
@@ -39,6 +41,26 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(
         }
 
         setupRcRepositories()
+
+        setupEtSearch()
+    }
+
+    private fun setupEtSearch(){
+        binding.etSearch.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_SEARCH) {
+                performSearch(binding.etSearch.text.toString())
+
+                // Event consumed
+                true
+            } else {
+                // Event wasn't handled
+                false
+            }
+        }
+    }
+
+    private fun performSearch(query: String) {
+        Toast.makeText(requireContext(), "Search query: $query", Toast.LENGTH_SHORT).show()
     }
 
     private fun setupRcRepositories(){
