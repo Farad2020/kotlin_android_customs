@@ -12,6 +12,11 @@ import dagger.hilt.android.AndroidEntryPoint
 import kz.farad2020.domain.model.GitHubRepository
 import kz.farad2020.repoloader.databinding.FragmentHomeBinding
 import kz.farad2020.repoloader.ui.base.BindingFragment
+import kz.farad2020.repoloader.ui.base.UiState
+import kz.farad2020.repoloader.ui.base.gone
+import kz.farad2020.repoloader.ui.base.hideKeyboard
+import kz.farad2020.repoloader.ui.base.showErrorSnackbar
+import kz.farad2020.repoloader.ui.base.visible
 import kz.farad2020.repoloader.ui.home.adapters.RepositoriesAdapter
 
 @AndroidEntryPoint
@@ -40,15 +45,16 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(
             Toast.makeText(requireContext(), downloadResult, Toast.LENGTH_SHORT).show()
         }
 
-        setupRcRepositoriesObserver()
-    }
 
-    private fun setupViews(){
-        val textView: TextView = binding.textHome
+        val textView: TextView = binding.tvMessage
         viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
 
+        setupRcRepositoriesObserver()
+    }
+
+    private fun setupViews(){
         setupEtSearch()
     }
 
@@ -58,6 +64,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(
             if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_SEARCH) {
                 val query = binding.etSearch.text.toString().trim()
                 viewModel.performSearch(query)
+                hideKeyboard()
 
                 // Event consumed
                 true
@@ -70,13 +77,50 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(
 
 //   TODO add loader ic, close keyboard
     private fun setupRcRepositoriesObserver(){
-        viewModel.list.observe(viewLifecycleOwner){ repositories ->
-            if(binding.rcRepositories.adapter != null && binding.rcRepositories.adapter is RepositoriesAdapter){
-                (binding.rcRepositories.adapter as RepositoriesAdapter).replaceRepositories(repositories)
-            }else{
-                val adapter = RepositoriesAdapter(repositories.toMutableList(), this)
-                binding.rcRepositories.adapter = adapter
+        viewModel.searchUiState.observe(viewLifecycleOwner){ state ->
+            when (state) {
+                is UiState.Loading -> onRepositoriesLoading()
+                is UiState.Success -> onRepositoryLoadSuccess(state.data)
+                is UiState.Error -> onRepositoryLoadError(state.message)
             }
+        }
+    }
+
+    private fun onRepositoriesLoading(){
+        binding.pbCircle.visible()
+        binding.tvMessage.gone()
+        binding.rcRepositories.gone()
+    }
+
+    private fun onRepositoryLoadError(message: String){
+        binding.pbCircle.gone()
+        binding.tvMessage.gone()
+        binding.rcRepositories.gone()
+
+        showErrorSnackbar(binding.root, message)
+    }
+
+    private fun onRepositoryLoadSuccess(data: List<GitHubRepository>){
+        binding.pbCircle.gone()
+
+        if(data.isEmpty()){
+            binding.tvMessage.visible()
+            binding.rcRepositories.gone()
+            return
+        }
+
+        binding.tvMessage.gone()
+        binding.rcRepositories.visible()
+
+        setAdapterData(data)
+    }
+
+    private fun setAdapterData(repositories: List<GitHubRepository>){
+        if(binding.rcRepositories.adapter != null && binding.rcRepositories.adapter is RepositoriesAdapter){
+            (binding.rcRepositories.adapter as RepositoriesAdapter).replaceRepositories(repositories)
+        }else{
+            val adapter = RepositoriesAdapter(repositories.toMutableList(), this)
+            binding.rcRepositories.adapter = adapter
         }
     }
 

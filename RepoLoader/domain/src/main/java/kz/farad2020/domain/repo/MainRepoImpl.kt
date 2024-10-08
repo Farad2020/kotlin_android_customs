@@ -2,9 +2,11 @@ package kz.farad2020.domain.repo
 
 import android.content.Context
 import android.os.Environment
-import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import kz.farad2020.domain.api.GitHubApiService
 import kz.farad2020.domain.model.GitHubRepository
+import kz.farad2020.domain.model.NetworkResult
 import okio.IOException
 import okio.buffer
 import okio.sink
@@ -16,9 +18,20 @@ class MainRepoImpl @Inject constructor(
     private val context: Context
 ): MainRepository {
 
-    override suspend fun searchRepositories(query: String): List<GitHubRepository> {
-        val response = apiService.searchRepositories(query)
-        return response.repositories
+    override suspend fun searchRepositories(query: String)
+    : Flow<NetworkResult<List<GitHubRepository>>> = flow {
+        emit(NetworkResult.Loading())
+
+        try {
+            val response = apiService.searchRepositories(query)
+            if (response.isSuccessful && response.body() != null) {
+                emit(NetworkResult.Success(response.body()!!.repositories))
+            } else {
+                emit(NetworkResult.Error("Error: ${response.message()}"))
+            }
+        } catch (e: Exception) {
+            emit(NetworkResult.Error("Exception: ${e.message}"))
+        }
     }
 
     override suspend fun downloadRepository(repoData: GitHubRepository): File? {

@@ -5,9 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import kz.farad2020.domain.model.GitHubRepository
+import kz.farad2020.domain.model.NetworkResult
 import kz.farad2020.domain.usecase.BaseUseCasesPack
+import kz.farad2020.repoloader.ui.base.UiState
 import javax.inject.Inject
 
 @HiltViewModel
@@ -24,19 +29,38 @@ class HomeViewModel @Inject constructor(
     val downloadResult: LiveData<String> = _downloadResult
 
 
-    private val _list = MutableLiveData<List<GitHubRepository>>().apply {
-        value = listOf()
-    }
-    val list: LiveData<List<GitHubRepository>> = _list
+    private var fetchRepositoriesJob: Job? = null
 
+    private val _searchUiState = MutableLiveData<UiState<List<GitHubRepository>>>()
+    val searchUiState: LiveData<UiState<List<GitHubRepository>>> = _searchUiState
 
     fun performSearch(query: String){
         if(query.isEmpty())
             return
 
-        viewModelScope.launch {
-//            TODO add handler that wraps answer
-            _list.value = useCases.searchRepository(query.trim())
+        fetchRepositoriesJob?.cancel()
+
+        fetchRepositoriesJob = viewModelScope.launch {
+             useCases.searchRepository(query.trim()).collect { result ->
+                 processSearchResult(result)
+            }
+        }
+    }
+
+    private fun processSearchResult(result: NetworkResult<List<GitHubRepository>>){
+        when (result) {
+            is NetworkResult.Loading -> {
+                _searchUiState.postValue(UiState.Loading)
+            }
+            is NetworkResult.Success -> {
+                result.data?.let { data ->
+                    _searchUiState.postValue(UiState.Success(data))
+                }
+            }
+            is NetworkResult.Error -> {
+                _searchUiState.postValue(UiState.Error(result.message ?: "Some error occurred"))
+            }
+            is NetworkResult.None -> {}
         }
     }
 
@@ -49,6 +73,12 @@ class HomeViewModel @Inject constructor(
                 _downloadResult.value = "File download failed"
             }
         }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+
+        fetchRepositoriesJob?.cancel()
     }
 
 }
