@@ -8,4 +8,6 @@
     <string name="subtitle">Subtitle or description goes here</string>
     <string name="empty_results">No results to show</string>
     <string name="empty_files">No directories to show</string>
+    <string name="download_icon">download icon</string>
+    <string name="web_icon">web icon</string>
 </resources>

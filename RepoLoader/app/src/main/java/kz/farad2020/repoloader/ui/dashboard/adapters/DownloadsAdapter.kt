@@ -3,6 +3,7 @@ package kz.farad2020.repoloader.ui.dashboard.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kz.farad2020.repoloader.databinding.LiDownloadedBinding
 import kz.farad2020.repoloader.databinding.LiRepoBinding
 import java.io.File
 
@@ -16,7 +17,7 @@ class DownloadsAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val view = LiRepoBinding.inflate(
+        val view = LiDownloadedBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false)
@@ -24,7 +25,7 @@ class DownloadsAdapter(
         return ItemViewHolder(view)
     }
 
-    inner class ItemViewHolder(binding: LiRepoBinding)
+    inner class ItemViewHolder(binding: LiDownloadedBinding)
         : RecyclerView.ViewHolder(binding.root) {
         val title = binding.titleText
         val subtitle = binding.subtitleText
