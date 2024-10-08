@@ -30,9 +30,19 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
 
+        setupObservers()
+
         setupViews()
 
         return binding.root
+    }
+
+    private fun setupObservers(){
+        viewModel.downloadResult.observe(viewLifecycleOwner){ downloadResult ->
+            Toast.makeText(requireContext(), downloadResult, Toast.LENGTH_SHORT).show()
+        }
+
+        setupRcRepositoriesObserver()
     }
 
     private fun setupViews(){
@@ -40,8 +50,6 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(
         viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-
-        setupRcRepositories()
 
         setupEtSearch()
     }
@@ -63,7 +71,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(
     }
 
 //   TODO add loader ic, close keyboard
-    private fun setupRcRepositories(){
+    private fun setupRcRepositoriesObserver(){
         viewModel.list.observe(viewLifecycleOwner){ repositories ->
             if(binding.rcRepositories.adapter != null && binding.rcRepositories.adapter is RepositoriesAdapter){
                 (binding.rcRepositories.adapter as RepositoriesAdapter).replaceRepositories(repositories)
@@ -75,7 +83,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(
     }
 
     override fun onDownloadRepository(data: GitHubRepository) {
-        viewModel.downloadRepository(requireContext(), data)
+        viewModel.downloadRepository(data)
     }
 
     override fun onOpenWvForRepository(data: GitHubRepository) {

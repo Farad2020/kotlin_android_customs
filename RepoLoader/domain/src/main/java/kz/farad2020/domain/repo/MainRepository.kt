@@ -1,10 +1,10 @@
 package kz.farad2020.domain.repo
 
 import kz.farad2020.domain.model.GitHubRepository
-import okhttp3.ResponseBody
+import java.io.File
 
 interface MainRepository {
     suspend fun searchRepositories(query: String): List<GitHubRepository>
 
-    suspend fun downloadRepository(url: String): ResponseBody
+    suspend fun downloadRepository(repoData: GitHubRepository): File?
 }

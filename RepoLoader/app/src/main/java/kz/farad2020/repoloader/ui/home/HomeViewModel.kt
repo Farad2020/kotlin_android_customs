@@ -23,6 +23,9 @@ class HomeViewModel @Inject constructor(
     }
     val text: LiveData<String> = _text
 
+    private val _downloadResult = MutableLiveData<String>()
+    val downloadResult: LiveData<String> = _downloadResult
+
 
     private val _list = MutableLiveData<List<GitHubRepository>>().apply {
         value = listOf()
@@ -40,16 +43,13 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun downloadRepository(context: Context, repoData: GitHubRepository) {
+    fun downloadRepository(repoData: GitHubRepository) {
         viewModelScope.launch {
-            val file = useCases.downloadRepository(repoData.getDownloadLink(), context)
+            val file = useCases.downloadRepository(repoData)
             file?.let {
-                // Do something with the file (e.g., notify user that download is complete)
-                Toast.makeText(context,
-                    "File downloaded successfully at: ${it.absolutePath}",
-                    Toast.LENGTH_SHORT).show()
+                _downloadResult.value = "File downloaded successfully at: ${it.absolutePath}"
             } ?: run {
-                Toast.makeText(context, "File download failed", Toast.LENGTH_SHORT).show()
+                _downloadResult.value = "File download failed"
             }
         }
     }

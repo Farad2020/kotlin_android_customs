@@ -1,8 +1,10 @@
 package kz.farad2020.domain.module
 
+import android.content.Context
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kz.farad2020.domain.api.GitHubApiService
 import kz.farad2020.domain.model.AppBaseUrls
@@ -16,7 +18,8 @@ import javax.inject.Qualifier
 import javax.inject.Singleton
 
 
-//Check if should set different lifetime, like ActivityComponent via abstract class
+//Check if should set different lifetime, like ActivityComponent via abstract class.
+// Also change usage of ApplicationContext if you do
 @Module
 @InstallIn(SingletonComponent::class)
 object MainModule {
@@ -86,7 +89,8 @@ object MainModule {
     @Singleton
     @Provides
     fun provideMainRepository(
-        @GitHubApiServiceQual apiService: GitHubApiService
-    ): MainRepository = MainRepoImpl(apiService)
+        @GitHubApiServiceQual apiService: GitHubApiService,
+        @ApplicationContext context: Context
+    ): MainRepository = MainRepoImpl(apiService, context)
 
 }
