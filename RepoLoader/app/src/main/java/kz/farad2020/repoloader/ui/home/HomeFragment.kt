@@ -45,12 +45,6 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(
             Toast.makeText(requireContext(), downloadResult, Toast.LENGTH_SHORT).show()
         }
 
-
-        val textView: TextView = binding.tvMessage
-        viewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-
         setupRcRepositoriesObserver()
     }
 

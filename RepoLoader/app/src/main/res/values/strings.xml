@@ -6,4 +6,5 @@
     <string name="search_repo">Search Repository</string>
     <string name="title">Title</string>
     <string name="subtitle">Subtitle or description goes here</string>
+    <string name="empty_results">No results to show</string>
 </resources>
