@@ -1,5 +1,7 @@
 package kz.farad2020.repoloader.ui.home
 
+import android.content.Context
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -35,6 +37,20 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
 //            TODO add handler that wraps answer
             _list.value = useCases.searchRepository(query.trim())
+        }
+    }
+
+    fun downloadRepository(context: Context, repoData: GitHubRepository) {
+        viewModelScope.launch {
+            val file = useCases.downloadRepository(repoData.getDownloadLink(), context)
+            file?.let {
+                // Do something with the file (e.g., notify user that download is complete)
+                Toast.makeText(context,
+                    "File downloaded successfully at: ${it.absolutePath}",
+                    Toast.LENGTH_SHORT).show()
+            } ?: run {
+                Toast.makeText(context, "File download failed", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

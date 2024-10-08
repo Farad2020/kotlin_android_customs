@@ -7,8 +7,14 @@ import kz.farad2020.domain.model.GitHubRepository
 import kz.farad2020.repoloader.databinding.LiRepoBinding
 
 class RepositoriesAdapter(
-    private val items: MutableList<GitHubRepository>
+    private val items: MutableList<GitHubRepository>,
+    private val listener: OnClickRepo
 ) : RecyclerView.Adapter<RepositoriesAdapter.ItemViewHolder>() {
+
+    interface OnClickRepo{
+        fun onDownloadRepository(data: GitHubRepository)
+        fun onOpenWvForRepository(data: GitHubRepository)
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -24,6 +30,7 @@ class RepositoriesAdapter(
         : RecyclerView.ViewHolder(binding.root) {
         val title = binding.titleText
         val subtitle = binding.subtitleText
+        val root = binding.root
     }
 
     // Replace the contents of a view (invoked by the layout manager)
@@ -31,6 +38,10 @@ class RepositoriesAdapter(
         val item = items[position]
         holder.title.text = item.name
         holder.subtitle.text = item.description
+
+        holder.root.setOnClickListener{
+            listener.onDownloadRepository(item)
+        }
     }
 
     fun replaceRepositories(newRepositories: List<GitHubRepository>) {

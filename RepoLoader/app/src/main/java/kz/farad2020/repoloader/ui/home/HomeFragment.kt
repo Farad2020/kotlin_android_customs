@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
+import kz.farad2020.domain.model.GitHubRepository
 import kz.farad2020.repoloader.databinding.FragmentHomeBinding
 import kz.farad2020.repoloader.ui.base.BindingFragment
 import kz.farad2020.repoloader.ui.home.adapters.RepositoriesAdapter
@@ -18,7 +19,7 @@ import kz.farad2020.repoloader.ui.home.adapters.RepositoriesAdapter
 @AndroidEntryPoint
 class HomeFragment : BindingFragment<FragmentHomeBinding>(
     FragmentHomeBinding::inflate
-) {
+), RepositoriesAdapter.OnClickRepo {
 
     private val viewModel: HomeViewModel by viewModels()
 
@@ -67,9 +68,17 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(
             if(binding.rcRepositories.adapter != null && binding.rcRepositories.adapter is RepositoriesAdapter){
                 (binding.rcRepositories.adapter as RepositoriesAdapter).replaceRepositories(repositories)
             }else{
-                val adapter = RepositoriesAdapter(repositories.toMutableList())
+                val adapter = RepositoriesAdapter(repositories.toMutableList(), this)
                 binding.rcRepositories.adapter = adapter
             }
         }
+    }
+
+    override fun onDownloadRepository(data: GitHubRepository) {
+        viewModel.downloadRepository(requireContext(), data)
+    }
+
+    override fun onOpenWvForRepository(data: GitHubRepository) {
+        Toast.makeText(requireContext(), "add WebView", Toast.LENGTH_SHORT).show()
     }
 }
