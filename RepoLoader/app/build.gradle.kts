@@ -56,6 +56,7 @@ dependencies {
     implementation(libs.timber)
 
     implementation(libs.androidx.core.splashscreen)
+    implementation(libs.material)
 
     implementation(libs.dagger.hilt.android)
     kapt(libs.hilt.android.compiler)
