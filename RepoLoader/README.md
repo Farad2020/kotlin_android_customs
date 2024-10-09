@@ -12,6 +12,9 @@ Works like any other android app. If SplashScreen doesn't show, launch from devi
 Tested on:
 - Android 7, 10, 12
 
+
+![Example Screenshot](https://github.com/Farad2020/kotlin_android_customs/blob/main/RepoLoader/screenshots/screen_search.png?raw=true)
+
 ## Used tools
 
 - Android SplashScreen
