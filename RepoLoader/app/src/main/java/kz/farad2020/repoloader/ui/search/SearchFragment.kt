@@ -123,8 +123,8 @@ class SearchFragment : BindingFragment<FragmentSearchBinding>(
         }
     }
 
-    override fun onDownloadRepository(data: GitHubRepository) {
-        viewModel.downloadRepository(data)
+    override fun onDownloadRepository(data: GitHubRepository, onDownloadFinish: () -> Unit) {
+        viewModel.downloadRepository(data, onDownloadFinish)
     }
 
     /**

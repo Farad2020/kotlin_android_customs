@@ -66,9 +66,10 @@ class SearchViewModel @Inject constructor(
         _downloadResult.value = ""
     }
 
-    fun downloadRepository(repoData: GitHubRepository) {
+    fun downloadRepository(repoData: GitHubRepository, onDownloadFinish: () -> Unit) {
         viewModelScope.launch {
             val file = useCases.downloadRepository(repoData)
+            onDownloadFinish()
             file?.let {
                 _downloadResult.value = "File downloaded successfully"
             } ?: run {

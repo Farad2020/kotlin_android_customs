@@ -14,6 +14,10 @@ fun View.gone(){
     this.visibility = View.GONE
 }
 
+fun View.invisible(){
+    this.visibility = View.INVISIBLE
+}
+
 fun Fragment.hideKeyboard() {
     val view = view ?: return
     val inputMethodManager = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager

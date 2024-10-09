@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import kz.farad2020.domain.model.GitHubRepository
 import kz.farad2020.repoloader.databinding.LiRepoBinding
+import kz.farad2020.repoloader.ui.base.gone
+import kz.farad2020.repoloader.ui.base.invisible
+import kz.farad2020.repoloader.ui.base.visible
 
 class RepositoriesAdapter(
     private var items: MutableList<GitHubRepository>,
@@ -13,7 +16,7 @@ class RepositoriesAdapter(
 ) : RecyclerView.Adapter<RepositoriesAdapter.ItemViewHolder>() {
 
     interface OnClickRepo{
-        fun onDownloadRepository(data: GitHubRepository)
+        fun onDownloadRepository(data: GitHubRepository, onDownloadFinish: () -> Unit)
         fun onOpenBrowser(data: GitHubRepository)
     }
 
@@ -33,6 +36,7 @@ class RepositoriesAdapter(
         val subtitle = binding.subtitleText
         val icWeb = binding.webIcon
         val icDownload = binding.downloadIcon
+        val loader = binding.pbCircle
     }
 
     // Replace the contents of a view (invoked by the layout manager)
@@ -46,7 +50,21 @@ class RepositoriesAdapter(
         }
 
         holder.icDownload.setOnClickListener{
-            listener.onDownloadRepository(item)
+            shouldShowDownloadButton(false, holder)
+
+            listener.onDownloadRepository(item){
+                shouldShowDownloadButton(true, holder)
+            }
+        }
+    }
+
+    private fun shouldShowDownloadButton(show: Boolean, holder: ItemViewHolder){
+        if(show){
+            holder.loader.gone()
+            holder.icDownload.visible()
+        }else{
+            holder.loader.visible()
+            holder.icDownload.invisible()
         }
     }
 
