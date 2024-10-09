@@ -21,5 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "RepoLoader"
 include(":app")
-include(":core")
 include(":domain")
