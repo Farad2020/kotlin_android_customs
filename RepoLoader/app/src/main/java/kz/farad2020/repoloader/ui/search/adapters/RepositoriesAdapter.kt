@@ -2,12 +2,13 @@ package kz.farad2020.repoloader.ui.search.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import kz.farad2020.domain.model.GitHubRepository
 import kz.farad2020.repoloader.databinding.LiRepoBinding
 
 class RepositoriesAdapter(
-    private val items: MutableList<GitHubRepository>,
+    private var items: MutableList<GitHubRepository>,
     private val listener: OnClickRepo
 ) : RecyclerView.Adapter<RepositoriesAdapter.ItemViewHolder>() {
 
@@ -50,14 +51,10 @@ class RepositoriesAdapter(
     }
 
     fun replaceRepositories(newRepositories: List<GitHubRepository>) {
-        val oldSize = items.size
-        items.clear()
-        notifyItemRangeRemoved(0, oldSize)
-
-
-        // Add new data and notify about the newly added items
-        items.addAll(newRepositories)
-        notifyItemRangeInserted(0, newRepositories.size)
+        val diffCallback = RepositoriesDiffUtil(items, newRepositories)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
+        items = newRepositories.toMutableList()
+        diffResult.dispatchUpdatesTo(this)
     }
 
 

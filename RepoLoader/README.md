@@ -26,4 +26,4 @@ Since Technical Requirements didn't mention followings, they are not yet impleme
 - RoomDB, Datastore usage
 - Shown Loader while Downloading repo is very basic, could be updated
 - Deletion\Rename of downloaded files
-- 
+- Paging for large sets

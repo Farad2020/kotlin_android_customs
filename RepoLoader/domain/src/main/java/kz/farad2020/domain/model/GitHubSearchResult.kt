@@ -13,7 +13,7 @@ data class GitHubRepository(
     val name: String,
     val description: String?,
     @SerializedName("html_url") val htmlUrl: String,
-    @SerializedName("full_name") private val fullName: String,
+    @SerializedName("full_name") val fullName: String,
     @SerializedName("default_branch") private val defaultBranch: String,
 ){
 //    TODO check if works with GITHUB_API_URL
