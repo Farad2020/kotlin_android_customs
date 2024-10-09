@@ -1,24 +1,23 @@
-# RepoLoader
+# RepoLoader :globe_with_meridians:
 
-RepoLoader is a Android Application for downloading online repositories.
+RepoLoader is a Android Application for downloading online repositories to local folder.
+Use Initial page to search and display repositories. Then you can check the repo in browser, or start download.
+Downloaded projects can be viewed from "Downloads" page.
+"Notifications" page is temporary placeholder.
 
 ## Installation
 
-Works like any other android app.
+Works like any other android app. If SplashScreen doesn't show, launch from device.
 
-## Some links\themes
+## Used tools
 
-SplashScreen - https://developer.android.com/develop/ui/views/launch/splash-screen/migrate#migrate
-Material3 - https://m3.material.io/styles/color/system/overview
-MaterialTheme Figma - https://www.figma.com/design/rPGqZ7BhMXtp0eza0j7kP9/Untitled?node-id=0-1&node-type=canvas&t=DLUAVYPMKtkRm5yo-0
-Baseline colors - https://m3.material.io/styles/color/static/baseline
+- Android SplashScreen
+- Usage of Material3 Guidelines, Icons, Colors
+- RecyclerView to display lists
 
-RecyclerView
-Pagination
+- Timber for logging
 
+- For Requests used Hilt for DI, Retrofit2, OkHttp3, Gson
 
-Hilt - https://developer.android.com/training/dependency-injection/hilt-android -> https://developer.android.com/codelabs/android-hilt#1
-Room - https://developer.android.com/training/data-storage/room
-Service, retrofit, okhttp3, timber later
-
-
+## Possible additions
+Since Technical Requirements didn't mention followings, they are not yet implemented but under a consideration.
