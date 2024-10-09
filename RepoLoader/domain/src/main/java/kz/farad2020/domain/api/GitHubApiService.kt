@@ -8,10 +8,6 @@ import retrofit2.http.Query
 import retrofit2.http.Url
 
 interface GitHubApiService {
-//    TODO -> https://docs.github.com/en/rest?apiVersion=2022-11-28
-//      use https://api.github.com/search/repositories?q=real to get data on repos
-
-
     @GET("search/repositories")
     suspend fun searchRepositories(@Query("q") query: String): Response<GitHubSearchResult>
 

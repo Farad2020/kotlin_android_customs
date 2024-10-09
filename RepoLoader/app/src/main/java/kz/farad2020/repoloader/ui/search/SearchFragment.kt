@@ -40,8 +40,6 @@ class SearchFragment : BindingFragment<FragmentSearchBinding>(
         return binding.root
     }
 
-
-    //   TODO add loader ic, close keyboard
     private fun setupEtSearch(){
         binding.etSearch.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_SEARCH) {
@@ -74,7 +72,6 @@ class SearchFragment : BindingFragment<FragmentSearchBinding>(
 
     }
 
-//   TODO add loader ic, close keyboard
     private fun setupRcRepositoriesObserver(){
         viewModel.searchUiState.observe(viewLifecycleOwner){ state ->
             when (state) {

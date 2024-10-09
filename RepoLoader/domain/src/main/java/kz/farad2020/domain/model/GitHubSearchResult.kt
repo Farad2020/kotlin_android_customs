@@ -16,7 +16,6 @@ data class GitHubRepository(
     @SerializedName("full_name") val fullName: String,
     @SerializedName("default_branch") private val defaultBranch: String,
 ){
-//    TODO check if works with GITHUB_API_URL
     fun getDownloadLink(): String{
         return "${GITHUB_URL}/${fullName}/archive/refs/heads/${defaultBranch}.zip"
     }

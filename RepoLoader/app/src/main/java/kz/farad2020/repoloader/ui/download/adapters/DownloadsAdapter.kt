@@ -44,7 +44,6 @@ class DownloadsAdapter(
         }
     }
 
-//    TODO redo this
     fun replaceDownloads(newRepositories: List<File>) {
         val diffCallback = DownloadsDiffUtil(items, newRepositories)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
