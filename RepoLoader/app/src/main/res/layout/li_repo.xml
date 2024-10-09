@@ -36,29 +36,16 @@
         app:layout_constraintTop_toBottomOf="@id/titleText" />
 
 
-    <ImageView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/webIcon"
-        android:padding="4dp"
+        style="?attr/materialIconButtonFilledStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_web"
-        android:background="@drawable/icon_bg"
-        android:contentDescription="@string/web_icon"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@id/downloadIcon"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-
-    <ImageView
-        android:id="@+id/downloadIcon"
-        android:padding="4dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_download"
+        android:contentDescription="@string/web_icon"
+        app:icon="@drawable/ic_web"
         android:background="@drawable/icon_bg"
-        android:contentDescription="@string/download_icon"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/downloadIcon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
@@ -74,5 +61,17 @@
         app:layout_constraintTop_toTopOf="@+id/downloadIcon"
         app:layout_constraintEnd_toEndOf="@+id/downloadIcon"
         app:layout_constraintStart_toStartOf="@+id/downloadIcon" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/downloadIcon"
+        style="?attr/materialIconButtonFilledStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/download_icon"
+        app:icon="@drawable/ic_download"
+        android:background="@drawable/icon_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
