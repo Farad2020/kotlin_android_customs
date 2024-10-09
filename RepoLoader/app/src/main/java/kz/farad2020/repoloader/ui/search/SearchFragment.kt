@@ -10,7 +10,7 @@ import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import kz.farad2020.domain.model.GitHubRepository
-import kz.farad2020.repoloader.databinding.FragmentHomeBinding
+import kz.farad2020.repoloader.databinding.FragmentSearchBinding
 import kz.farad2020.repoloader.ui.base.BindingFragment
 import kz.farad2020.repoloader.ui.base.UiState
 import kz.farad2020.repoloader.ui.base.gone
@@ -20,8 +20,8 @@ import kz.farad2020.repoloader.ui.base.visible
 import kz.farad2020.repoloader.ui.search.adapters.RepositoriesAdapter
 
 @AndroidEntryPoint
-class SearchFragment : BindingFragment<FragmentHomeBinding>(
-    FragmentHomeBinding::inflate
+class SearchFragment : BindingFragment<FragmentSearchBinding>(
+    FragmentSearchBinding::inflate
 ), RepositoriesAdapter.OnClickRepo {
 
     private val viewModel: SearchViewModel by viewModels()

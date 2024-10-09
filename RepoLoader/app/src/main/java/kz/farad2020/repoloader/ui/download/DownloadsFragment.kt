@@ -9,9 +9,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import kz.farad2020.repoloader.databinding.FragmentDashboardBinding
+import kz.farad2020.repoloader.databinding.FragmentDownloadsBinding
 import kz.farad2020.repoloader.ui.base.BindingFragment
 import kz.farad2020.repoloader.ui.base.gone
 import kz.farad2020.repoloader.ui.base.visible
@@ -19,13 +18,9 @@ import kz.farad2020.repoloader.ui.download.adapters.DownloadsAdapter
 import java.io.File
 
 @AndroidEntryPoint
-class DownloadsFragment : BindingFragment<FragmentDashboardBinding>(
-    FragmentDashboardBinding::inflate
+class DownloadsFragment : BindingFragment<FragmentDownloadsBinding>(
+    FragmentDownloadsBinding::inflate
 ), DownloadsAdapter.OnClickDownloadedRepo {
-
-    private val viewModel: DownloadsViewModel by viewModels()
-
-
     private val readExternalStoragePermissionRequest =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             if (isGranted) {

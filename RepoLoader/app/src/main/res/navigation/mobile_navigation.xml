@@ -9,13 +9,13 @@
         android:id="@+id/navigation_home"
         android:name="kz.farad2020.repoloader.ui.search.SearchFragment"
         android:label="@string/title_search"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_search" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="kz.farad2020.repoloader.ui.download.DownloadsFragment"
         android:label="@string/title_downloads"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_downloads" />
 
     <fragment
         android:id="@+id/navigation_notifications"

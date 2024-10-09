@@ -30,3 +30,6 @@ Since Technical Requirements didn't mention followings, they are not yet impleme
 - Shown Loader while Downloading repo is very basic, could be updated
 - Deletion\Rename of downloaded files
 - Paging for large sets
+- Services for loading state
+- Updated design, based on Figma maybe
+- Open Links from custom WebView
