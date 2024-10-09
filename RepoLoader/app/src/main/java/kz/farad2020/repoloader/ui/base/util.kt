@@ -20,7 +20,7 @@ fun Fragment.hideKeyboard() {
     inputMethodManager?.hideSoftInputFromWindow(view.windowToken, 0)
 }
 
-fun showErrorSnackbar(view: View, message: String) {
+fun showSnackbar(view: View, message: String) {
     Snackbar.make(view, message, Snackbar.LENGTH_LONG)
         .setAction("OK") {
             // You can add a retry action or handle other behaviors

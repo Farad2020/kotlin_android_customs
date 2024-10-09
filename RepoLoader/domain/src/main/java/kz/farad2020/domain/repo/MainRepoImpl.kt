@@ -43,7 +43,7 @@ class MainRepoImpl @Inject constructor(
             // Get the external file path
             val zipFile = File(
                 context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS),
-                "${repoData.name}.zip")
+                "${repoData.getLogin()}:${repoData.name}.zip")
 
             // Write the response body to file
             responseBody.source().use { source ->

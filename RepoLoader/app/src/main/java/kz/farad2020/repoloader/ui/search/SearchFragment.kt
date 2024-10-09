@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import kz.farad2020.domain.model.GitHubRepository
@@ -16,7 +15,7 @@ import kz.farad2020.repoloader.ui.base.BindingFragment
 import kz.farad2020.repoloader.ui.base.UiState
 import kz.farad2020.repoloader.ui.base.gone
 import kz.farad2020.repoloader.ui.base.hideKeyboard
-import kz.farad2020.repoloader.ui.base.showErrorSnackbar
+import kz.farad2020.repoloader.ui.base.showSnackbar
 import kz.farad2020.repoloader.ui.base.visible
 import kz.farad2020.repoloader.ui.search.adapters.RepositoriesAdapter
 
@@ -43,7 +42,7 @@ class SearchFragment : BindingFragment<FragmentHomeBinding>(
 
     private fun setupObservers(){
         viewModel.downloadResult.observe(viewLifecycleOwner){ downloadResult ->
-            Toast.makeText(requireContext(), downloadResult, Toast.LENGTH_SHORT).show()
+            showSnackbar(binding.root, downloadResult)
         }
 
         setupRcRepositoriesObserver()
@@ -92,7 +91,7 @@ class SearchFragment : BindingFragment<FragmentHomeBinding>(
         binding.tvMessage.gone()
         binding.rcRepositories.gone()
 
-        showErrorSnackbar(binding.root, message)
+        showSnackbar(binding.root, message)
     }
 
     private fun onRepositoryLoadSuccess(data: List<GitHubRepository>){

@@ -20,4 +20,8 @@ data class GitHubRepository(
     fun getDownloadLink(): String{
         return "${GITHUB_URL}/${fullName}/archive/refs/heads/${defaultBranch}.zip"
     }
+
+    fun getLogin(): String{
+        return fullName.substringBefore("/")
+    }
 }

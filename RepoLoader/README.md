@@ -24,3 +24,6 @@ Works like any other android app. If SplashScreen doesn't show, launch from devi
 Since Technical Requirements didn't mention followings, they are not yet implemented but under a consideration.
 - Handling different fail states better than showing snackBar, from request errors or permission denials
 - RoomDB, Datastore usage
+- Shown Loader while Downloading repo is very basic, could be updated
+- Deletion\Rename of downloaded files
+- 
