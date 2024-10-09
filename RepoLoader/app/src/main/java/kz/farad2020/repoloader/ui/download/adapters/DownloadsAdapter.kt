@@ -2,12 +2,14 @@ package kz.farad2020.repoloader.ui.download.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import kz.farad2020.repoloader.databinding.LiDownloadedBinding
+import kz.farad2020.repoloader.ui.search.adapters.RepositoriesDiffUtil
 import java.io.File
 
 class DownloadsAdapter(
-    private val items: MutableList<File>,
+    private var items: MutableList<File>,
     private val listener: OnClickDownloadedRepo
 ) : RecyclerView.Adapter<DownloadsAdapter.ItemViewHolder>() {
 
@@ -44,14 +46,10 @@ class DownloadsAdapter(
 
 //    TODO redo this
     fun replaceDownloads(newRepositories: List<File>) {
-        val oldSize = items.size
-        items.clear()
-        notifyItemRangeRemoved(0, oldSize)
-
-
-        // Add new data and notify about the newly added items
-        items.addAll(newRepositories)
-        notifyItemRangeInserted(0, newRepositories.size)
+        val diffCallback = DownloadsDiffUtil(items, newRepositories)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
+        items = newRepositories.toMutableList()
+        diffResult.dispatchUpdatesTo(this)
     }
 
 
