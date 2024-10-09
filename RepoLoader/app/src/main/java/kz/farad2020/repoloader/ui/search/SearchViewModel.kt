@@ -62,11 +62,15 @@ class SearchViewModel @Inject constructor(
         }
     }
 
+    fun resetDownloadResultData(){
+        _downloadResult.value = ""
+    }
+
     fun downloadRepository(repoData: GitHubRepository) {
         viewModelScope.launch {
             val file = useCases.downloadRepository(repoData)
             file?.let {
-                _downloadResult.value = "File downloaded successfully at: ${it.absolutePath}"
+                _downloadResult.value = "File downloaded successfully"
             } ?: run {
                 _downloadResult.value = "File download failed"
             }

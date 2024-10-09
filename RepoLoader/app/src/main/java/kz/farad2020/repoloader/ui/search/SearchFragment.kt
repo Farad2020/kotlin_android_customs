@@ -35,24 +35,13 @@ class SearchFragment : BindingFragment<FragmentHomeBinding>(
 
         setupObservers()
 
-        setupViews()
+        setupEtSearch()
 
         return binding.root
     }
 
-    private fun setupObservers(){
-        viewModel.downloadResult.observe(viewLifecycleOwner){ downloadResult ->
-            showSnackbar(binding.root, downloadResult)
-        }
 
-        setupRcRepositoriesObserver()
-    }
-
-    private fun setupViews(){
-        setupEtSearch()
-    }
-
-//   TODO add loader ic, close keyboard
+    //   TODO add loader ic, close keyboard
     private fun setupEtSearch(){
         binding.etSearch.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_SEARCH) {
@@ -67,6 +56,22 @@ class SearchFragment : BindingFragment<FragmentHomeBinding>(
                 false
             }
         }
+    }
+
+    private fun setupObservers(){
+        setupDownloadResultListener()
+
+        setupRcRepositoriesObserver()
+    }
+
+    private fun setupDownloadResultListener(){
+        viewModel.downloadResult.observe(viewLifecycleOwner){ downloadResult ->
+            if(downloadResult.isNotEmpty()){
+                showSnackbar(binding.root, downloadResult)
+                viewModel.resetDownloadResultData()
+            }
+        }
+
     }
 
 //   TODO add loader ic, close keyboard
