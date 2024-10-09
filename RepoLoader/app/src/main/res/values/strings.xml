@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">RepoLoader</string>
     <string name="title_search">Search</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_downloads">Downloads</string>
     <string name="title_notifications">Notifications</string>
     <string name="search_repo">Search Repository</string>
+
     <string name="title">Title</string>
     <string name="subtitle">Subtitle or description goes here</string>
+
     <string name="empty_results">No results to show</string>
     <string name="empty_files">No directories to show</string>
     <string name="download_icon">download icon</string>

@@ -1,4 +1,4 @@
-package kz.farad2020.repoloader.ui.dashboard
+package kz.farad2020.repoloader.ui.download
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class DashboardViewModel @Inject constructor() : ViewModel() {
+class DownloadsViewModel @Inject constructor() : ViewModel() {
 
     private val _text = MutableLiveData<String>()
     val text: LiveData<String> = _text

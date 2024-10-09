@@ -13,8 +13,8 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="kz.farad2020.repoloader.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:name="kz.farad2020.repoloader.ui.download.DownloadsFragment"
+        android:label="@string/title_downloads"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment

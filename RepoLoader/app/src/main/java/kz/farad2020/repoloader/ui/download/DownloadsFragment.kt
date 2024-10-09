@@ -1,4 +1,4 @@
-package kz.farad2020.repoloader.ui.dashboard
+package kz.farad2020.repoloader.ui.download
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -15,15 +15,15 @@ import kz.farad2020.repoloader.databinding.FragmentDashboardBinding
 import kz.farad2020.repoloader.ui.base.BindingFragment
 import kz.farad2020.repoloader.ui.base.gone
 import kz.farad2020.repoloader.ui.base.visible
-import kz.farad2020.repoloader.ui.dashboard.adapters.DownloadsAdapter
+import kz.farad2020.repoloader.ui.download.adapters.DownloadsAdapter
 import java.io.File
 
 @AndroidEntryPoint
-class DashboardFragment : BindingFragment<FragmentDashboardBinding>(
+class DownloadsFragment : BindingFragment<FragmentDashboardBinding>(
     FragmentDashboardBinding::inflate
 ), DownloadsAdapter.OnClickDownloadedRepo {
 
-    private val viewModel: DashboardViewModel by viewModels()
+    private val viewModel: DownloadsViewModel by viewModels()
 
 
     private val readExternalStoragePermissionRequest =

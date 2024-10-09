@@ -1,10 +1,9 @@
-package kz.farad2020.repoloader.ui.dashboard.adapters
+package kz.farad2020.repoloader.ui.download.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kz.farad2020.repoloader.databinding.LiDownloadedBinding
-import kz.farad2020.repoloader.databinding.LiRepoBinding
 import java.io.File
 
 class DownloadsAdapter(
