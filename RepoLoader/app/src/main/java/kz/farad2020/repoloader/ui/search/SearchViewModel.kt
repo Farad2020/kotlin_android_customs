@@ -1,4 +1,4 @@
-package kz.farad2020.repoloader.ui.home
+package kz.farad2020.repoloader.ui.search
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,8 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import kz.farad2020.domain.model.GitHubRepository
 import kz.farad2020.domain.model.NetworkResult
@@ -16,7 +14,7 @@ import kz.farad2020.repoloader.ui.base.UiState
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(
+class SearchViewModel @Inject constructor(
     private val useCases: BaseUseCasesPack
 ) : ViewModel() {
 

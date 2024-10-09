@@ -1,4 +1,4 @@
-package kz.farad2020.repoloader.ui.home
+package kz.farad2020.repoloader.ui.search
 
 import android.content.Intent
 import android.net.Uri
@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,14 +18,14 @@ import kz.farad2020.repoloader.ui.base.gone
 import kz.farad2020.repoloader.ui.base.hideKeyboard
 import kz.farad2020.repoloader.ui.base.showErrorSnackbar
 import kz.farad2020.repoloader.ui.base.visible
-import kz.farad2020.repoloader.ui.home.adapters.RepositoriesAdapter
+import kz.farad2020.repoloader.ui.search.adapters.RepositoriesAdapter
 
 @AndroidEntryPoint
-class HomeFragment : BindingFragment<FragmentHomeBinding>(
+class SearchFragment : BindingFragment<FragmentHomeBinding>(
     FragmentHomeBinding::inflate
 ), RepositoriesAdapter.OnClickRepo {
 
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: SearchViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

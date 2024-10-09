@@ -1,4 +1,4 @@
-package kz.farad2020.repoloader.ui.home.adapters
+package kz.farad2020.repoloader.ui.search.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="kz.farad2020.repoloader.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:name="kz.farad2020.repoloader.ui.search.SearchFragment"
+        android:label="@string/title_search"
         tools:layout="@layout/fragment_home" />
 
     <fragment

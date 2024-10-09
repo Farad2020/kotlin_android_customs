@@ -6,21 +6,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
 import kz.farad2020.repoloader.databinding.FragmentDashboardBinding
 import kz.farad2020.repoloader.ui.base.BindingFragment
 import kz.farad2020.repoloader.ui.base.gone
 import kz.farad2020.repoloader.ui.base.visible
 import kz.farad2020.repoloader.ui.dashboard.adapters.DownloadsAdapter
-import kz.farad2020.repoloader.ui.home.HomeViewModel
-import kz.farad2020.repoloader.ui.home.adapters.RepositoriesAdapter
 import java.io.File
 
 @AndroidEntryPoint
