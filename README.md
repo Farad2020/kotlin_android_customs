@@ -14,6 +14,12 @@ Description: Basic Android application demonstrating modular architecture.
 Details: Explores concepts like modularity, allowing for potential future expansion.
 To learn more: Navigate to the PlaneTicketSeller directory.
 
+
+### [RepoLoader](https://github.com/Farad2020/kotlin_android_customs/tree/main/RepoLoader) :globe_with_meridians:
+Description: Android Application for downloading online repositories to a device.
+Details: Explores concepts like modularity, and basic work with web and files.
+To learn more: Navigate to the RepoLoader directory.
+
 ### How to Use This Repository:
 Clone this repository to your local machine.
 Run the projects using Android Studio or your preferred IDE.
