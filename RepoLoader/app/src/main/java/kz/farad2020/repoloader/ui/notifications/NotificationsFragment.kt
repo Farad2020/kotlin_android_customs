@@ -22,6 +22,8 @@ class NotificationsFragment : BindingFragment<FragmentNotificationsBinding>(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        super.onCreateView(inflater, container, savedInstanceState)
+
         val textView: TextView = binding.textNotifications
         notificationsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
