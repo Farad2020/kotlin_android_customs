@@ -45,7 +45,16 @@ class DownloadsFragment : BindingFragment<FragmentDashboardBinding>(
 
         checkFilesPermission()
 
+        setupViews()
+
         return binding.root
+    }
+
+    private fun setupViews(){
+        binding.swipeRefresh.setOnRefreshListener {
+            binding.swipeRefresh.isRefreshing = true
+            checkFilesPermission()
+        }
     }
 
     private fun checkFilesPermission(){
@@ -57,6 +66,7 @@ class DownloadsFragment : BindingFragment<FragmentDashboardBinding>(
         } else {
             // Request permission
             readExternalStoragePermissionRequest.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
+            binding.swipeRefresh.isRefreshing = false
         }
     }
 
@@ -73,6 +83,8 @@ class DownloadsFragment : BindingFragment<FragmentDashboardBinding>(
         } else {
             binding.tvMessage.visible()
         }
+
+        binding.swipeRefresh.isRefreshing = false
     }
 
     private fun showDownloadedRepositories(files: List<File>){
